@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 00:20:52 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 01:04:19 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,24 @@ enum			e_key
 	KEY_UNKNOW
 };
 
-struct			s_arg
+struct				s_arg
 {
-	const char	*name;
-	size_t		qt_sym;
-	char		*color;
-	int			status;
+	struct s_arg	*next;
+	struct s_arg	*prev;
+	const char		*name;
+	size_t			qt_sym;
+	char			*color;
+	int				status;
 };
 
 typedef	struct	s_info_args
 {
-	struct s_arg	*args;
+	struct s_arg	*begin;
+	struct s_arg	*end;
+	struct s_arg	*cur_pos;
+	char			*italics;
+	char			*clear_win;
 	size_t			size;
-	size_t			ind_ins;
 }				t_info_args;
 
 struct			s_win

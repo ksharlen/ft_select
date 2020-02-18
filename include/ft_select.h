@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 00:07:41 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 01:06:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <termcap.h>
 
 # include "libft.h"
+# include "ft_dbl_list_cycl.h"
 # include "ft_limits.h"
 # include "struct.h"
 
@@ -30,6 +31,7 @@ void		str_error(const char *filename, const char *str);
 void		syserror(const char *filename, const char *str);
 
 void		init_term(struct s_init *init);
+void		init_termcap(t_info_args *args);
 
 /*
 **TERMCAP
