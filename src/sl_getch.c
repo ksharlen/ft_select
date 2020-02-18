@@ -61,5 +61,7 @@ uint32_t	sl_getch(void)
 		return (get_key());
 	else if (sym >= 32 && sym <= 126)
 		return (sym);
+	else if (sym == 127)
+		return (KEY_BACKSPACE);
 	return (sym);
 }

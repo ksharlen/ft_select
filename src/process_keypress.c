@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 00:18:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 00:26:59 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ static void	move_position(t_info_args *args, t_key key)
 	}
 }
 
+static void	delete_curr_elem(t_info_args *args)
+{
+	// EXIT();
+	args->args[args->ind_ins].status = DELTED;
+}
+
 void	process_keypress(t_info_args *args)
 {
 	int		key;
@@ -42,6 +48,8 @@ void	process_keypress(t_info_args *args)
 		if (key == KEY_L_ARROW || key == KEY_R_ARROW ||
 			key == KEY_U_ARROW || key == KEY_D_ARROW)
 			move_position(args, key);
+		else if (key == KEY_BACKSPACE)
+			delete_curr_elem(args);
 		print_args(args);
 	}
 }

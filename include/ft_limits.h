@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/18 16:17:19 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 00:23:49 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 
 //!TMP
 # define P_UNUSED(var) (void)(var)
+
+# define EXIT() exit(EXIT_FAILURE)
 
 typedef uint32_t	t_key;
 typedef uint8_t		t_byte;

@@ -18,8 +18,9 @@ void	print_args(t_info_args *args)
 	ft_putstr_fd(cl, STDWORK);
 	while (i < args->size)
 	{
-		ft_printf("%v%s%s%s%s ", STDWORK, args->args[i].color, i == args->ind_ins ? ins : "",
-					args->args[i].name, FT_COLOR_DFLT);
+		if (args->args[i].status == NOT_DELETED)
+			ft_printf("%v%s%s%s%s ", STDWORK, args->args[i].color, i == args->ind_ins ? ins : "",
+						args->args[i].name, FT_COLOR_DFLT);
 		++i;
 	}
 }
