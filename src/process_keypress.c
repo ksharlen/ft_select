@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   process_keypress.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 15:26:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/18 16:52:41 by ksharlen         ###   ########.fr       */
+/*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
+/*   Updated: 2020/02/18 17:10:04 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-int		main(int argc, char **argv)
+void	process_keypress(t_info_args *args)
 {
-	struct s_init	init;
-	struct termios	cpy;
-	t_info_args		args;
+	int		key;
 
-	P_UNUSED(argc);
-	P_UNUSED(argv);
 	P_UNUSED(args);
-	if (argc > 1)
+	P_UNUSED(key);
+	key = 0;
+	write(STDWORK, "\e[2J", 4);
+	write(STDWORK, "\e[H", 3);
+	while (key != '\n')
 	{
-		init_term(&init);
-		args = convert_args_to_array(argc - 1, argv + 1);
-		no_canon(&cpy);
-		process_keypress(&args);
-		canon(&cpy);
+		read(STDERR_FILENO, &key, 1);
+		// ft_printf("%vkey: %d\n", STDERR_FILENO, key);
+		// write(STDWORK, &key, 1);
 	}
-	return (0);
 }

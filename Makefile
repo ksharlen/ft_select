@@ -5,7 +5,8 @@ SRC		:=	main.c\
 				term_mode.c\
 				init.c\
 				termcap.c\
-				convert_args_to_array.c
+				convert_args_to_array.c\
+				process_keypress.c
 
 OBJ		:=	$(SRC:.c=.o)
 

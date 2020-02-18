@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/18 16:43:59 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/18 16:48:02 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static	void	init_arg(struct s_arg *arg, const char *argv)
 	arg->color = FT_COLOR_DFLT;
 }
 
-struct s_arg	*convert_args(const size_t argc, char *const *argv,
+static struct	s_arg	*convert_args(const size_t argc, char *const *argv,
 	size_t size_new_arr)
 {
 	size_t	i;
@@ -59,19 +59,19 @@ struct s_arg	*convert_args(const size_t argc, char *const *argv,
 	return (args);
 }
 
-void	tmp(t_info_args *args)
-{
-	size_t	i = 0;
+// void	tmp(t_info_args *args)
+// {
+// 	size_t	i = 0;
 
-	while (i < args->size)
-	{
-		ft_printf("arg[%zd]->name: %s\n", i, args->args[i].name);
-		ft_printf("arg[%zd]->len: %zd\n", i, args->args[i].qt_sym);
-		ft_printf("arg[%zd]->status: %s\n", i, args->args[i].status == NOT_DELETED ? "not_deleted" : "deleted");
-		ft_printf("arg[%zd]->color: %s\n", i, args->args[i].color);
-		++i;
-	}
-}
+// 	while (i < args->size)
+// 	{
+// 		ft_printf("arg[%zd]->name: %s\n", i, args->args[i].name);
+// 		ft_printf("arg[%zd]->len: %zd\n", i, args->args[i].qt_sym);
+// 		ft_printf("arg[%zd]->status: %s\n", i, args->args[i].status == NOT_DELETED ? "not_deleted" : "deleted");
+// 		ft_printf("arg[%zd]->color: %s\n", i, args->args[i].color);
+// 		++i;
+// 	}
+// }
 
 t_info_args		convert_args_to_array(const int argc, char *const *argv)
 {
@@ -81,7 +81,7 @@ t_info_args		convert_args_to_array(const int argc, char *const *argv)
 	if (args.size)
 	{
 		args.args = convert_args(argc, argv, args.size);
-tmp(&args);
+// tmp(&args);
 	}
 	else
 		syserror(NULL, "arg or args is empty strings");
