@@ -85,5 +85,6 @@ t_info_args		convert_args_to_array(const int argc, char *const *argv)
 	}
 	else
 		syserror(NULL, "arg or args is empty strings");
+	args.ind_ins = 0;
 	return (args);
 }

@@ -8,7 +8,8 @@ SRC		:=	main.c\
 				convert_args_to_array.c\
 				process_keypress.c\
 				common.c\
-				sl_getch.c
+				sl_getch.c\
+				print_args.c
 
 OBJ		:=	$(SRC:.c=.o)
 

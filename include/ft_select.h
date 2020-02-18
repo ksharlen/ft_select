@@ -45,5 +45,6 @@ void		process_keypress(t_info_args *args);
 
 ssize_t		sl_read(int fd, void *buf, size_t count);
 uint32_t	sl_getch(void);
+void		print_args(t_info_args *args);
 
 #endif

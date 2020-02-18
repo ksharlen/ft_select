@@ -21,9 +21,12 @@ void	process_keypress(t_info_args *args)
 	key = 0;
 	write(STDWORK, "\e[2J", 4);
 	write(STDWORK, "\e[H", 3);
-	while (key != '\n')
+	while (key != KEY_ESC)
 	{
+		print_args(args);
 		key = sl_getch();
+		if (key == KEY_R_ARROW)
+			args->ind_ins++;
 		// read(STDERR_FILENO, &key, 1);
 		// ft_printf("%vkey: %d\n", STDERR_FILENO, key);
 		// write(STDWORK, &key, 1);

@@ -6,7 +6,7 @@ static t_byte	wait_event(void)
 	t_byte	sym;
 
 	nbytes = 0;
-	while (!nbytes)
+	while (nbytes == 0)
 	{
 		nbytes = sl_read(STDWORK, &sym, 1);
 		//TODO: chek size_win
@@ -34,8 +34,9 @@ static t_key	get_key(void)
 {
 	t_byte	sym;
 	t_key	key;
+	ssize_t	nbyte;
 
-	sl_read(STDWORK, &sym, 1);
+	nbyte = sl_read(STDWORK, &sym, 1);
 	if (sym == '[')
 	{
 		sl_read(STDWORK, &sym, 1);
@@ -44,6 +45,8 @@ static t_key	get_key(void)
 		else if (sym >= 'A' && sym <= 'B')
 			key = get_key_arrow(sym);
 	}
+	else if (!nbyte)
+		return (KEY_ESC);
 	return (key);
 }
 
@@ -56,5 +59,7 @@ uint32_t	sl_getch(void)
 	sym = wait_event();
 	if (sym == '\x1b')
 		return (get_key());
+	else if (sym >= 32 && sym <= 126)
+		return (sym);
 	return (sym);
 }

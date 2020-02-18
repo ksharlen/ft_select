@@ -29,6 +29,7 @@ enum			e_key
 	KEY_R_ARROW,
 	KEY_U_ARROW,
 	KEY_D_ARROW,
+	KEY_ESC,
 	KEY_UNKNOW
 };
 
@@ -44,6 +45,7 @@ typedef	struct	s_info_args
 {
 	struct s_arg	*args;
 	size_t			size;
+	size_t			ind_ins;
 }				t_info_args;
 
 struct			s_win
