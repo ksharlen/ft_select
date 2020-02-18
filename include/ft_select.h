@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/18 16:09:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/18 16:27:42 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ char	*sl_tgetstr(char *cb);
 char	*sl_tgoto(char *cb, int one, int two);
 void	sl_tputs(const char *str, int affcnt, int (*putc)(int));
 int		sl_tgetnum(char *str);
+
+t_info_args	convert_args_to_array(const int argc, char *const *argv);
 
 #endif

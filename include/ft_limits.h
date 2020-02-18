@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/18 15:49:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/18 16:17:19 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,8 @@
 //TODO
 
 # define STDWORK 2
+
+//!TMP
+# define P_UNUSED(var) (void)(var)
 
 #endif

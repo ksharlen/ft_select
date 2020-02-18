@@ -4,7 +4,8 @@ SRC		:=	main.c\
 				error.c\
 				term_mode.c\
 				init.c\
-				termcap.c
+				termcap.c\
+				convert_args_to_array.c
 
 OBJ		:=	$(SRC:.c=.o)
 

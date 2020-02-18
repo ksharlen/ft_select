@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:43:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/18 16:02:23 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/18 16:16:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void	init_term(struct s_init *init)
 	init->tty_name = ttyname(STDWORK);
 	if (!init->tty_name)
 		syserror(__FILE__, "fd is not connected to a terminal");
+	sl_tgetent(init->vterm);
 }
