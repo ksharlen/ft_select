@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/18 16:23:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/18 16:40:39 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ enum			e_status_arg
 
 struct			s_arg
 {
-	char	*name;
-	size_t	qt_sym;
-	int		color;
-	int		status;
+	const char	*name;
+	size_t		qt_sym;
+	char		*color;
+	int			status;
 };
 
 typedef	struct	s_info_args
