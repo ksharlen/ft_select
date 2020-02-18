@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_limits.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 15:26:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/18 15:52:11 by ksharlen         ###   ########.fr       */
+/*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
+/*   Updated: 2020/02/18 15:49:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#ifndef FT_LIMITS_H
+# define FT_LIMITS_H
 
-int		main(void)
-{
-	struct s_init	init;
+# include <limits.h>
 
-	// ft_printf("hello world\n");
-	init_term(&init);
-	return (0);
-}
+# include "libft.h"
+
+# define COLOR_C_FILE
+# define COLOR_O_FILE
+# define COLOR_ERROR	"\x1b[38;2;255;43;43m"
+//TODO
+
+# define STDWORK 2
+
+#endif

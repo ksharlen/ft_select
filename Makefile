@@ -1,10 +1,16 @@
 NAME	:=	ft_select
 
-SRC		:=	main.c
+SRC		:=	main.c\
+				error.c\
+				term_mode.c\
+				init.c\
+				termcap.c
 
 OBJ		:=	$(SRC:.c=.o)
 
-HEADERS	:=	ft_select.h
+HEADERS	:=	ft_select.h\
+				ft_limits.h\
+				struct.h
 
 DIR_SRC	:=	./src/
 
@@ -31,7 +37,7 @@ vpath	%.h	$(DIR_INCLUDE)
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJ)
-	gcc $(PATH_OBJ) $(PATH_LIBFT) -o $@
+	gcc $(PATH_OBJ) $(PATH_LIBFT) -o $@ -ltermcap
 
 $(OBJ): %.o:%.c $(HEADERS) | $(DIR_OBJ)
 	gcc $(CFLAGS) -c $< -o $(DIR_OBJ)$@ $(PATH_INCLUDE)
@@ -41,3 +47,5 @@ $(LIBFT):
 
 $(DIR_OBJ):
 	mkdir -p $@
+
+.SILENT: all $(NAME) $(OBJ) $(LIBFT) $(DIR_OBJ)
