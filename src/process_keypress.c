@@ -21,12 +21,18 @@ void	process_keypress(t_info_args *args)
 	key = 0;
 	write(STDWORK, "\e[2J", 4);
 	write(STDWORK, "\e[H", 3);
+		print_args(args);
 	while (key != KEY_ESC)
 	{
-		print_args(args);
 		key = sl_getch();
 		if (key == KEY_R_ARROW)
+		{
 			args->ind_ins++;
+			// exit(EXIT_FAILURE);
+		}
+		else if (key == KEY_L_ARROW)
+			args->ind_ins--;
+		print_args(args);
 		// read(STDERR_FILENO, &key, 1);
 		// ft_printf("%vkey: %d\n", STDERR_FILENO, key);
 		// write(STDWORK, &key, 1);

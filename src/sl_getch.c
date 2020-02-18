@@ -42,7 +42,7 @@ static t_key	get_key(void)
 		sl_read(STDWORK, &sym, 1);
 		if (sym >= '0' && sym <= '9')
 			;//TODO key combo
-		else if (sym >= 'A' && sym <= 'B')
+		else if (sym >= 'A' && sym <= 'D')
 			key = get_key_arrow(sym);
 	}
 	else if (!nbyte)
