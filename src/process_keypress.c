@@ -23,7 +23,8 @@ void	process_keypress(t_info_args *args)
 	write(STDWORK, "\e[H", 3);
 	while (key != '\n')
 	{
-		read(STDERR_FILENO, &key, 1);
+		key = sl_getch();
+		// read(STDERR_FILENO, &key, 1);
 		// ft_printf("%vkey: %d\n", STDERR_FILENO, key);
 		// write(STDWORK, &key, 1);
 	}

@@ -27,4 +27,7 @@
 //!TMP
 # define P_UNUSED(var) (void)(var)
 
+typedef uint32_t	t_key;
+typedef uint8_t		t_byte;
+
 #endif

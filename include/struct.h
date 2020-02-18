@@ -23,6 +23,15 @@ enum			e_status_arg
 	NOT_DELETED
 };
 
+enum			e_key
+{
+	KEY_L_ARROW = 1000,
+	KEY_R_ARROW,
+	KEY_U_ARROW,
+	KEY_D_ARROW,
+	KEY_UNKNOW
+};
+
 struct			s_arg
 {
 	const char	*name;

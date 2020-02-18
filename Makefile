@@ -6,7 +6,9 @@ SRC		:=	main.c\
 				init.c\
 				termcap.c\
 				convert_args_to_array.c\
-				process_keypress.c
+				process_keypress.c\
+				common.c\
+				sl_getch.c
 
 OBJ		:=	$(SRC:.c=.o)
 
