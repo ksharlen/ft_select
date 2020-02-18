@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 01:04:19 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 01:43:42 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ enum			e_key
 	KEY_D_ARROW,
 	KEY_ESC,
 	KEY_BACKSPACE,
-	KEY_UNKNOW
+	KEY_UNKNOW,
+	KEY_SPACE = 32,
 };
 
 struct				s_arg
@@ -40,7 +41,8 @@ struct				s_arg
 	struct s_arg	*prev;
 	const char		*name;
 	size_t			qt_sym;
-	char			*color;
+	char			*color_text;
+	char			*color_bck;
 	int				status;
 };
 

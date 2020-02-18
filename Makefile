@@ -9,7 +9,8 @@ SRC		:=	main.c\
 				process_keypress.c\
 				common.c\
 				sl_getch.c\
-				print_args.c
+				print_args.c\
+				color_file.c
 
 OBJ		:=	$(SRC:.c=.o)
 

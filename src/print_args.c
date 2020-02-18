@@ -29,13 +29,18 @@ void	print_args(t_info_args *args)
 {
 	struct s_arg	*current;
 
-	current = args->begin;
-	ft_putstr_fd(args->clear_win, STDWORK);
-	while (current)
+	if (args->size)
 	{
-		ft_printf("%v%s%s%s%s ", STDWORK, current->color,
-			current == args->cur_pos ? args->italics : "",
-				current->name, FT_COLOR_DFLT);
-		current = current->next;
+		current = args->begin;
+		ft_putstr_fd(args->clear_win, STDWORK);
+		while (current)
+		{
+			ft_printf("%v%s%s%s%s ", STDWORK, current->color_text,
+				current == args->cur_pos ? args->italics : "",
+					current->name, FT_COLOR_DFLT);
+			current = current->next;
+		}
 	}
+	else
+		EXIT();//TODO: TMP
 }

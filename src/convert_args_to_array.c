@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 01:01:15 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 01:51:31 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ static void	init_new_elem(t_info_args *args, const char *argv)
 	new->name = argv;
 	new->qt_sym = ft_strlen(argv);
 	new->status = NOT_DELETED;
-	new->color = FT_COLOR_DFLT;
+	set_colors_file(new);
+	// new->color = FT_COLOR_DFLT;
 	if (args->begin == NULL)
 	{
 		args->begin = new;
