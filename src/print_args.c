@@ -1,5 +1,11 @@
 #include "ft_select.h"
 
+int		sl_putchar(int c)
+{
+	write(STDWORK, &c, 1);
+	return (c);
+}
+
 void	print_args(t_info_args *args)
 {
 	size_t	i;
