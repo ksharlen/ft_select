@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 17:56:17 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:03:12 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,16 @@ static void	delete_elem(t_info_args *args)
 
 void	select_elem(t_info_args *args)
 {
-	args->cur_pos->status |= SELECT;
-	set_color_selected_elem(args->cur_pos);
+	if (args->cur_pos->status & SELECT)
+	{
+		args->cur_pos->status ^= (uint32_t)SELECT;
+		unset_color_selected_elem(args->cur_pos);
+	}
+	else
+	{
+		args->cur_pos->status |= SELECT;
+		set_color_selected_elem(args->cur_pos);
+	}
 }
 
 void	process_keypress(t_info_args *args)
