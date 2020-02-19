@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 22:17:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 23:25:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,24 @@ static void		move_position(t_info_args *args, t_key key)
 	else if (key == KEY_R_ARROW)
 		args->cur_pos = args->cur_pos->next ?
 		args->cur_pos->next : args->begin;
+	else if (key == KEY_D_ARROW)
+	{
+		size_t	i = 0;
+		size_t	line = ((args->wn.cols - (args->wn.cols / args->max_len_arg)) / (args->max_len_arg));
+
+		while (i < line)
+		{
+			args->cur_pos = args->cur_pos->next;
+			if (!args->cur_pos)
+			{
+				args->cur_pos = args->begin;
+			}
+			++i;
+			// else
+			// {
+			// }
+		}
+	}
 }
 
 void			clean_list(t_info_args *args)

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 22:40:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 22:56:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	print_args(t_info_args *args)
 	{
 		sym_qt_in_line = 0;
 		sl_tputs(args->return_cursor, 1, wputchar);
-		ft_print_nsym(STDWORK, ' ', (args->wn.cols - 2) * (args->wn.rows - 2));
+		ft_print_nsym(STDWORK, ' ', (args->wn.cols) * (args->wn.rows - 1));
 		sl_tputs(args->return_cursor, 1, wputchar);
 		current = args->begin;
 		while (current)
@@ -38,7 +38,7 @@ void	print_args(t_info_args *args)
 				ft_putchar_fd('\n', STDWORK);
 				sym_qt_in_line = 0;
 			}
-			fprintf(stderr, "%s%s%s%-*s%s ", current->color_text,
+			ft_printf("%v%s%s%s%-*s%s ", STDWORK, current->color_text,
 				current->color_bck ? current->color_bck : "",
 				current == args->cur_pos ? args->italics : "",
 					args->max_len_arg, current->name, FT_COLOR_DFLT);
