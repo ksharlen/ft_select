@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 23:26:54 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 00:13:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,47 @@
 static void		move_position(t_info_args *args, t_key key)
 {
 	if (key == KEY_L_ARROW)
+	{
+		args->num_cur_pos = args->cur_pos->prev ? args->num_cur_pos - 1 : args->size - 1;
 		args->cur_pos = args->cur_pos->prev ?
 		args->cur_pos->prev : args->end;
+	}
 	else if (key == KEY_R_ARROW)
+	{
+		args->num_cur_pos = args->cur_pos->next ? args->num_cur_pos + 1 : 0;
 		args->cur_pos = args->cur_pos->next ?
 		args->cur_pos->next : args->begin;
+	}
 	else if (key == KEY_D_ARROW)
 	{
-		size_t	i = 0;
-		size_t	line = ((args->wn.cols - (args->wn.cols / args->max_len_arg)) / (args->max_len_arg));
+		ssize_t	i = 0;
+		ssize_t	line = ((args->wn.cols - (args->wn.cols / args->max_len_arg)) / (args->max_len_arg));
 
-		while (i < line)
+		if (args->num_cur_pos + line < (ssize_t)args->size)
 		{
-			if (!args->cur_pos)
+			while (i < line)
 			{
-				args->cur_pos = args->begin;
+				++i;
+				if (!args->cur_pos->next)
+					args->cur_pos = args->begin;
+				args->cur_pos = args->cur_pos->next;
 			}
-			args->cur_pos = args->cur_pos->next;
-			++i;
-			// else
-			// {
-			// }
+			args->num_cur_pos += line;
+		}
+	}
+	else if (key == KEY_U_ARROW)
+	{
+		ssize_t	i = 0;
+		ssize_t	line = ((args->wn.cols - (args->wn.cols / args->max_len_arg)) / (args->max_len_arg));
+
+		if (args->num_cur_pos - line >= 0)
+		{
+			while (i < line)
+			{
+				++i;
+				args->cur_pos = args->cur_pos->prev;
+			}
+			args->num_cur_pos -= line;
 		}
 	}
 }
@@ -71,6 +91,7 @@ static void		delete_elem(t_info_args *args)
 		}
 		free(del);
 		--args->size;
+		--args->num_cur_pos;
 	}
 	else
 		clean_list(args);

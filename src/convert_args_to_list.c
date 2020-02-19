@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:49:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 00:01:31 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ t_info_args		convert_args_to_array(const int argc, char *const *argv)
 	args.begin = NULL;
 	args.end = NULL;
 	args.max_len_arg = 0;
+	args.num_cur_pos = 0;
 	args.size = get_size_args(argc, argv);
 	if (args.size)
 		convert_args(&args, argc, argv);
