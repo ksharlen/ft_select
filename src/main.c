@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:26:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 01:17:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 14:28:39 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ int		main(int argc, char **argv)
 	struct termios	cpy;
 	t_info_args		args;
 
-	P_UNUSED(argc);
-	P_UNUSED(argv);
-	P_UNUSED(args);
 	if (argc > 1)
 	{
 		init_term(&init);

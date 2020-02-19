@@ -36,6 +36,7 @@ static t_key	get_key(void)
 	t_key	key;
 	ssize_t	nbyte;
 
+	key = KEY_UNKNOW;
 	nbyte = sl_read(STDWORK, &sym, 1);
 	if (sym == '[')
 	{
@@ -45,8 +46,8 @@ static t_key	get_key(void)
 		else if (sym >= 'A' && sym <= 'D')
 			key = get_key_arrow(sym);
 	}
-	else if (!nbyte)
-		return (KEY_ESC);
+	else if (nbyte == 0)
+		key = KEY_ESC;
 	return (key);
 }
 
@@ -54,7 +55,6 @@ uint32_t	sl_getch(void)
 {
 	t_byte	sym;
 
-	P_UNUSED(sym);
 	sym = 0;
 	sym = wait_event();
 	if (sym == '\x1b')

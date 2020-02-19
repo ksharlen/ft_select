@@ -40,9 +40,9 @@ vpath	%.c	$(DIR_SRC)
 vpath	%.o $(DIR_OBJ)
 vpath	%.h	$(DIR_INCLUDE)
 
-all: $(NAME)
+all: $(LIBFT) $(NAME)
 
-$(NAME): $(LIBFT) $(OBJ)
+$(NAME): $(OBJ)
 	gcc $(PATH_OBJ) $(PATH_LIBFT) -o $@ -ltermcap
 
 $(OBJ): %.o:%.c $(HEADERS) | $(DIR_OBJ)
