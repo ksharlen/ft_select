@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:14:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:43:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 22:09:20 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static t_byte	wait_event(t_info_args *args)
 	t_byte			sym;
 
 	nbytes = 0;
+	sym = 0;
 	while (nbytes == 0)
 	{
 		nbytes = sl_read(STDWORK, &sym, 1);
@@ -52,6 +53,7 @@ static t_key	get_key(void)
 	ssize_t	nbyte;
 
 	key = KEY_UNKNOW;
+	sym = 0;
 	nbyte = sl_read(STDWORK, &sym, 1);
 	if (sym == '[')
 	{

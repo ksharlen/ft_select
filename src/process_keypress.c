@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 21:37:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 22:17:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,6 @@ void			process_keypress(t_info_args *args)
 	key = 0;
 	while (key != KEY_ESC && args->size)
 	{
-		// ft_putstr_fd(args->clear_win, STDWORK);
-		// write(STDWORK, "\x1b[H", 3);
 		print_args(args);
 		key = sl_getch(args);
 		if (key == KEY_L_ARROW || key == KEY_R_ARROW ||

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:12:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 21:37:28 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 22:02:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,5 @@ void		get_win_size(struct s_win *wn)
 void		screen_update(t_info_args *args, struct s_win *wn)
 {
 	args->wn = *wn;
-	// ft_putstr_fd(args->clear_win, STDWORK);
-	// write(STDWORK, "\x1b[H", 3);
 	print_args(args);
 }

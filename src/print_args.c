@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 21:48:49 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 22:28:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,16 @@ void	print_args(t_info_args *args)
 	if (args->size)
 	{
 		sym_qt_in_line = 0;
-		write(STDWORK, "\x1b[H", 3);
-		// sl_tputs(args->clear_win, 1, wputchar);
+		// sl_tputs(args->return_cursor, 1, wputchar);
 		// write(STDWORK, "\x1b[H", 3);
+		// tmp = sl_tgoto(sl_tgetstr("cm"), 1, 1);
+		// sl_tputs(tmp, 1, wputchar);
+		sl_tputs(args->return_cursor, 1, wputchar);
+		ft_print_nsym(STDWORK, ' ', (args->wn.cols - 2) * (args->wn.rows - 2));
+		sl_tputs(args->return_cursor, 1, wputchar);
+		// sl_tputs(tmp, 1, wputchar);
+		// write(STDWORK, "\x1b[H", 3);
+		// sl_tputs(args->return_cursor, 1, wputchar);
 		current = args->begin;
 		while (current)
 		{
