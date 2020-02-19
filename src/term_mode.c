@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:37:17 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 00:04:11 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:13:59 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	wputchar(int c)
 	return (c);
 }
 
-void	no_canon(struct termios *cpy_cfg)
+void		no_canon(struct termios *cpy_cfg)
 {
 	struct termios	new_cfg;
 	int				st_tc;
@@ -35,7 +35,7 @@ void	no_canon(struct termios *cpy_cfg)
 	tputs(tgetstr("vi", NULL), 1, wputchar);
 }
 
-void	canon(struct termios *cpy_cfg)
+void		canon(struct termios *cpy_cfg)
 {
 	int	st_tc;
 

@@ -6,26 +6,32 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:03:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:16:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-static void	move_position(t_info_args *args, t_key key)
+static void		move_position(t_info_args *args, t_key key)
 {
 	if (key == KEY_L_ARROW)
-	{
-		args->cur_pos = args->cur_pos->prev ? args->cur_pos->prev : args->end;
-	}
+		args->cur_pos = args->cur_pos->prev ?
+		args->cur_pos->prev : args->end;
 	else if (key == KEY_R_ARROW)
-	{
-		args->cur_pos = args->cur_pos->next ? args->cur_pos->next : args->begin;
-	}
+		args->cur_pos = args->cur_pos->next ?
+		args->cur_pos->next : args->begin;
 }
 
-//TODO: refact
-static void	delete_elem(t_info_args *args)
+void			clean_list(t_info_args *args)
+{
+	free(args->begin);
+	args->begin = NULL;
+	args->end = NULL;
+	args->cur_pos = NULL;
+	args->size = 0;
+}
+
+static void		delete_elem(t_info_args *args)
 {
 	struct s_arg	*del;
 
@@ -41,23 +47,18 @@ static void	delete_elem(t_info_args *args)
 		else
 		{
 			args->cur_pos->prev->next = args->cur_pos->next;
-			args->cur_pos->next ? args->cur_pos->next->prev = args->cur_pos->prev: NULL;
+			args->cur_pos->next ?
+			args->cur_pos->next->prev = args->cur_pos->prev : NULL;
 			args->cur_pos = args->cur_pos->prev;
 		}
 		free(del);
 		--args->size;
 	}
 	else
-	{
-		free(args->begin);
-		args->begin = NULL;
-		args->end = NULL;
-		args->cur_pos = NULL;
-		args->size = 0;
-	}
+		clean_list(args);
 }
 
-void	select_elem(t_info_args *args)
+void			select_elem(t_info_args *args)
 {
 	if (args->cur_pos->status & SELECT)
 	{
@@ -71,14 +72,11 @@ void	select_elem(t_info_args *args)
 	}
 }
 
-void	process_keypress(t_info_args *args)
+void			process_keypress(t_info_args *args)
 {
 	int		key;
 
-	P_UNUSED(args);
-	P_UNUSED(key);
 	key = 0;
-	// print_args(args);
 	while (key != KEY_ESC && args->size)
 	{
 		print_args(args);
@@ -90,9 +88,5 @@ void	process_keypress(t_info_args *args)
 			delete_elem(args);
 		else if (key == KEY_SPACE)
 			select_elem(args);
-		// 	move_position(args, key);
-		// // else if (key == KEY_BACKSPACE)
-		// 	// delete_curr_elem(args);
-		// print_args(args);
 	}
 }

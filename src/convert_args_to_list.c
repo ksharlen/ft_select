@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 18:59:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:11:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static size_t	get_size_args(const int argc, char *const *argv)
 	return (qt_not_empty_args);
 }
 
-static void	init_new_elem(t_info_args *args, const char *argv)
+static void		init_new_elem(t_info_args *args, const char *argv)
 {
 	struct s_arg	*new;
 
@@ -50,10 +50,9 @@ static void	init_new_elem(t_info_args *args, const char *argv)
 	}
 	new->next = NULL;
 	args->end = new;
-	//TODO: need free
 }
 
-static void	convert_args(t_info_args *args,
+static void		convert_args(t_info_args *args,
 	const size_t argc, char *const *argv)
 {
 	size_t	i;
@@ -62,9 +61,7 @@ static void	convert_args(t_info_args *args,
 	while (i < argc)
 	{
 		if (*argv[i])
-		{
 			init_new_elem(args, argv[i]);
-		}
 		++i;
 	}
 }

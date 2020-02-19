@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 19:03:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:16:57 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,11 @@
 # define COLOR_BCK_O	"\x1b[48;2;0;255;255m"
 # define COLOR_BCK_DFLT	"\x1b[48;2;255;255;255m"
 # define NON_COLOR_BCK	"\x1b[49m"
-//TODO
 
 # define STDWORK 2
 
 //!TMP
 # define P_UNUSED(var) (void)(var)
-
 # define EXIT() exit(EXIT_FAILURE)
 
 typedef uint32_t	t_key;

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 01:44:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 19:59:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:12:13 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static void	set_color_file(struct s_arg *elem, char *sym)
 	{
 		if (*sym == 'o')
 		{
+			elem->status |= O_FILE;
 			elem->status |= COLOR_FILE;
-			elem->status |=	O_FILE;
 			elem->color_text = COLOR_O_FILE;
 			elem->color_bck = NULL;
 			return ;
@@ -37,7 +37,7 @@ static void	set_color_file(struct s_arg *elem, char *sym)
 	elem->color_bck = NULL;
 }
 
-void	check_colors_file(struct s_arg *elem)
+void		check_colors_file(struct s_arg *elem)
 {
 	char	*sym;
 
@@ -50,7 +50,7 @@ void	check_colors_file(struct s_arg *elem)
 	}
 }
 
-void	set_color_selected_elem(struct s_arg *elem)
+void		set_color_selected_elem(struct s_arg *elem)
 {
 	if (elem->status & COLOR_FILE)
 	{
@@ -64,7 +64,7 @@ void	set_color_selected_elem(struct s_arg *elem)
 	elem->color_text = COLOR_BLACK;
 }
 
-void	unset_color_selected_elem(struct s_arg *elem)
+void		unset_color_selected_elem(struct s_arg *elem)
 {
 	if (elem->status & COLOR_FILE)
 	{
@@ -76,5 +76,4 @@ void	unset_color_selected_elem(struct s_arg *elem)
 	else
 		elem->color_text = COLOR_DFLT;
 	elem->color_bck = NULL;
-
 }

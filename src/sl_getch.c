@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sl_getch.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/19 20:14:19 by ksharlen          #+#    #+#             */
+/*   Updated: 2020/02/19 20:14:32 by ksharlen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_select.h"
 
 static t_byte	wait_event(void)
@@ -9,7 +21,6 @@ static t_byte	wait_event(void)
 	while (nbytes == 0)
 	{
 		nbytes = sl_read(STDWORK, &sym, 1);
-		//TODO: chek size_win
 	}
 	return (sym);
 }
@@ -42,7 +53,7 @@ static t_key	get_key(void)
 	{
 		sl_read(STDWORK, &sym, 1);
 		if (sym >= '0' && sym <= '9')
-			;//TODO key combo
+			;
 		else if (sym >= 'A' && sym <= 'D')
 			key = get_key_arrow(sym);
 	}
@@ -51,7 +62,7 @@ static t_key	get_key(void)
 	return (key);
 }
 
-uint32_t	sl_getch(void)
+uint32_t		sl_getch(void)
 {
 	t_byte	sym;
 
