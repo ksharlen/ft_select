@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:11:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:49:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static void		init_new_elem(t_info_args *args, const char *argv)
 	ft_chk_null_ptr(new, E_MALLOC);
 	new->name = argv;
 	new->qt_sym = ft_strlen(argv);
+	if (new->qt_sym > args->max_len_arg)
+		args->max_len_arg = new->qt_sym;
 	new->status = 0;
 	check_colors_file(new);
 	if (args->begin == NULL)
@@ -72,6 +74,7 @@ t_info_args		convert_args_to_array(const int argc, char *const *argv)
 
 	args.begin = NULL;
 	args.end = NULL;
+	args.max_len_arg = 0;
 	args.size = get_size_args(argc, argv);
 	if (args.size)
 		convert_args(&args, argc, argv);

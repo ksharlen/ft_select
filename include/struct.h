@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:18:44 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:46:28 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef	struct		s_info_args
 	char			*clear_win;
 	size_t			size;
 	uint32_t		status;
+	uint32_t		max_len_arg;
 }					t_info_args;
 
 

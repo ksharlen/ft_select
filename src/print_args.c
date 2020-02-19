@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:13:34 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:50:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	print_args(t_info_args *args)
 		ft_putstr_fd(args->clear_win, STDWORK);
 		while (current)
 		{
-			ft_printf("%v%s%s%s%s%s ", STDWORK, current->color_text,
+			ft_printf("%v%s%s%s%-*s%s ", STDWORK, current->color_text,
 				current->color_bck ? current->color_bck : "",
 				current == args->cur_pos ? args->italics : "",
-					current->name, FT_COLOR_DFLT);
+					args->max_len_arg, current->name, FT_COLOR_DFLT);
 			current = current->next;
 		}
 	}
