@@ -6,17 +6,11 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:37:17 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:13:59 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 21:40:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
-
-static int	wputchar(int c)
-{
-	write(STDWORK, &c, 1);
-	return (c);
-}
 
 void		no_canon(struct termios *cpy_cfg)
 {

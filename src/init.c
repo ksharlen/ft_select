@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:43:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:51:08 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 21:39:24 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	init_term(struct s_init *init)
 void	init_termcap(t_info_args *args)
 {
 	args->italics = sl_tgetstr("us");
-	args->clear_win = sl_tgetstr("cl");
+	args->clear_win = sl_tgetstr("cd");
 	args->wn.cols = sl_tgetnum("co");
 	args->wn.rows = sl_tgetnum("li");
 }
