@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 23:25:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 23:26:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ static void		move_position(t_info_args *args, t_key key)
 
 		while (i < line)
 		{
-			args->cur_pos = args->cur_pos->next;
 			if (!args->cur_pos)
 			{
 				args->cur_pos = args->begin;
 			}
+			args->cur_pos = args->cur_pos->next;
 			++i;
 			// else
 			// {
