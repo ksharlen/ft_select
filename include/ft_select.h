@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 21:40:39 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 22:31:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <termios.h>
 # include <termcap.h>
 # include <sys/ioctl.h>
+# include <stdio.h>
 
 # include "libft.h"
 # include "ft_dbl_list_cycl.h"
