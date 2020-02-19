@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_args_to_array.c                            :+:      :+:    :+:   */
+/*   convert_args_to_list.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 01:51:31 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 18:59:51 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,6 @@ static size_t	get_size_args(const int argc, char *const *argv)
 	return (qt_not_empty_args);
 }
 
-// static	void	init_arg(struct s_arg *arg, const char *argv)
-// {
-// 	arg->name = argv;
-// 	arg->qt_sym = ft_strlen(arg->name);
-// 	arg->status = NOT_DELETED;
-// 	arg->color = FT_COLOR_DFLT;
-// }
-
 static void	init_new_elem(t_info_args *args, const char *argv)
 {
 	struct s_arg	*new;
@@ -44,9 +36,8 @@ static void	init_new_elem(t_info_args *args, const char *argv)
 	ft_chk_null_ptr(new, E_MALLOC);
 	new->name = argv;
 	new->qt_sym = ft_strlen(argv);
-	new->status = NOT_DELETED;
-	set_colors_file(new);
-	// new->color = FT_COLOR_DFLT;
+	new->status = 0;
+	check_colors_file(new);
 	if (args->begin == NULL)
 	{
 		args->begin = new;
@@ -78,22 +69,6 @@ static void	convert_args(t_info_args *args,
 	}
 }
 
-// static void tmp(struct s_arg *beg)
-// {
-// 	while (beg)
-// 	{
-// 		printf("name: %s	qt_sym: %zd\n", beg->name, beg->qt_sym);
-// 		beg = beg->next;
-// 	}
-// 	EXIT();
-// }
-
-// {
-// 	// ft_printf("%v%s\n", STDWORK, ((struct s_arg *)beg->data)->name);
-// 	write(STDWORK, ((struct s_arg *)beg->data)->name, ((struct s_arg *)beg->data)->qt_sym);
-// 	EXIT();
-// }
-
 t_info_args		convert_args_to_array(const int argc, char *const *argv)
 {
 	t_info_args	args;
@@ -105,8 +80,6 @@ t_info_args		convert_args_to_array(const int argc, char *const *argv)
 		convert_args(&args, argc, argv);
 	else
 		syserror(NULL, "arg or args is empty strings");
-// tmp(args.begin);
-	// args.ind_ins = 0;
 	args.cur_pos = args.begin;
 	return (args);
 }

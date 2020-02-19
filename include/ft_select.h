@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 01:50:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 18:59:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ uint32_t	sl_getch(void);
 void		print_args(t_info_args *args);
 
 int			sl_putchar(int c);
-void		set_colors_file(struct s_arg *elem);
+void		check_colors_file(struct s_arg *elem);
+void		set_color_selected_elem(struct s_arg *elem);
 
 #endif

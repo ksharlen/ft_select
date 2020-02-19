@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 01:43:42 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 14:34:28 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 enum			e_status_arg
 {
-	DELTED,
-	NOT_DELETED
+	SELECTED,
+	NOT_SELECTED
 };
 
 enum			e_key
@@ -54,6 +54,7 @@ typedef	struct	s_info_args
 	char			*italics;
 	char			*clear_win;
 	size_t			size;
+	int				status;
 }				t_info_args;
 
 struct			s_win

@@ -5,7 +5,7 @@ SRC		:=	main.c\
 				term_mode.c\
 				init.c\
 				termcap.c\
-				convert_args_to_array.c\
+				convert_args_to_list.c\
 				process_keypress.c\
 				common.c\
 				sl_getch.c\

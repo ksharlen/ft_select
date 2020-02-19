@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 01:52:49 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 19:03:20 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,22 @@
 
 # include "libft.h"
 
+# define SELECT		1
+# define COLOR_FILE	2
+# define C_FILE		256
+# define O_FILE		512
+# define MAKEFILE	1024
+
+# define COLOR_DFLT		"\x1b[38;2;255;255;255m"
 # define COLOR_C_FILE	"\x1b[38;2;255;204;0m"
 # define COLOR_O_FILE	"\x1b[38;2;0;255;255m"
 # define COLOR_ERROR	"\x1b[38;2;255;43;43m"
+# define COLOR_BLACK	"\x1b[38;2;0;0;0m"
+
+# define COLOR_BCK_C	"\x1b[48;2;255;204;0m"
+# define COLOR_BCK_O	"\x1b[48;2;0;255;255m"
+# define COLOR_BCK_DFLT	"\x1b[48;2;255;255;255m"
+# define NON_COLOR_BCK	"\x1b[49m"
 //TODO
 
 # define STDWORK 2
