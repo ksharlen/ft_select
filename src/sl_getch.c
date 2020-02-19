@@ -6,21 +6,25 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:14:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:14:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:43:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-static t_byte	wait_event(void)
+static t_byte	wait_event(t_info_args *args)
 {
-	ssize_t	nbytes;
-	t_byte	sym;
+	struct s_win	wn;
+	ssize_t			nbytes;
+	t_byte			sym;
 
 	nbytes = 0;
 	while (nbytes == 0)
 	{
 		nbytes = sl_read(STDWORK, &sym, 1);
+		get_win_size(&wn);
+		if (ft_memcmp(&args->wn, &wn, sizeof(struct s_win)))
+			screen_update(args, &wn);
 	}
 	return (sym);
 }
@@ -62,12 +66,12 @@ static t_key	get_key(void)
 	return (key);
 }
 
-uint32_t		sl_getch(void)
+uint32_t		sl_getch(t_info_args *args)
 {
 	t_byte	sym;
 
 	sym = 0;
-	sym = wait_event();
+	sym = wait_event(args);
 	if (sym == '\x1b')
 		return (get_key());
 	else if (sym >= 32 && sym <= 126)

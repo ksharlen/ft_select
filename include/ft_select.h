@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:17:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:44:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <sys/types.h>
 # include <termios.h>
 # include <termcap.h>
+# include <sys/ioctl.h>
 
 # include "libft.h"
 # include "ft_dbl_list_cycl.h"
@@ -46,12 +47,14 @@ t_info_args	convert_args_to_array(const int argc, char *const *argv);
 void		process_keypress(t_info_args *args);
 
 ssize_t		sl_read(int fd, void *buf, size_t count);
-uint32_t	sl_getch(void);
+uint32_t	sl_getch(t_info_args *args);
 void		print_args(t_info_args *args);
 
 int			sl_putchar(int c);
 void		check_colors_file(struct s_arg *elem);
 void		set_color_selected_elem(struct s_arg *elem);
 void		unset_color_selected_elem(struct s_arg *elem);
+void		get_win_size(struct s_win *wn);
+void		screen_update(t_info_args *args, struct s_win *wn);
 
 #endif

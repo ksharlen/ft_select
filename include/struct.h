@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:17:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/19 20:18:44 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,15 @@ struct				s_arg
 	int				status;
 };
 
+struct				s_win
+{
+	size_t		cols;
+	size_t		rows;
+};
+
 typedef	struct		s_info_args
 {
+	struct s_win	wn;
 	struct s_arg	*begin;
 	struct s_arg	*end;
 	struct s_arg	*cur_pos;
@@ -57,11 +64,6 @@ typedef	struct		s_info_args
 	uint32_t		status;
 }					t_info_args;
 
-struct				s_win
-{
-	size_t		cols;
-	size_t		rows;
-};
 
 struct				s_cursor
 {
