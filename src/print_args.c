@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 22:56:11 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 02:27:59 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	print_args(t_info_args *args)
 	{
 		sym_qt_in_line = 0;
 		sl_tputs(args->return_cursor, 1, wputchar);
-		ft_print_nsym(STDWORK, ' ', (args->wn.cols) * (args->wn.rows - 1));
+		ft_print_nsym(STDWORK, ' ', (args->wn.cols) * (args->wn.rows));
 		sl_tputs(args->return_cursor, 1, wputchar);
 		current = args->begin;
 		while (current)

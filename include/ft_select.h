@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 22:31:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 13:09:58 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@
 # include <termcap.h>
 # include <sys/ioctl.h>
 # include <stdio.h>
+# include <signal.h>
 
 # include "libft.h"
 # include "ft_dbl_list_cycl.h"
 # include "ft_limits.h"
 # include "struct.h"
+
+extern struct termios cpy;
 
 void		canon(struct termios *cpy_cfg);
 void		no_canon(struct termios *cpy_cfg);
@@ -58,5 +61,6 @@ void		unset_color_selected_elem(struct s_arg *elem);
 void		get_win_size(struct s_win *wn);
 void		screen_update(t_info_args *args, struct s_win *wn);
 int			wputchar(int c);
+void		signals_handler(void);
 
 #endif

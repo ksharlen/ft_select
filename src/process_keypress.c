@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 00:13:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 02:21:32 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void		move_position(t_info_args *args, t_key key)
 {
 	if (key == KEY_L_ARROW)
 	{
-		args->num_cur_pos = args->cur_pos->prev ? args->num_cur_pos - 1 : args->size - 1;
+		args->num_cur_pos = args->cur_pos->prev ? args->num_cur_pos - 1 : (int32_t)args->size - 1;
 		args->cur_pos = args->cur_pos->prev ?
 		args->cur_pos->prev : args->end;
 	}

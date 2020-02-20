@@ -10,7 +10,8 @@ SRC		:=	main.c\
 				common.c\
 				sl_getch.c\
 				print_args.c\
-				color_file.c
+				color_file.c\
+				signals_handler.c
 
 OBJ		:=	$(SRC:.c=.o)
 

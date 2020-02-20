@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:14:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 22:09:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 13:54:04 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static t_byte	wait_event(t_info_args *args)
 		get_win_size(&wn);
 		if (ft_memcmp(&args->wn, &wn, sizeof(struct s_win)))
 			screen_update(args, &wn);
+		else
+			print_args(args);
 	}
 	return (sym);
 }
