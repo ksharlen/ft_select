@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 15:20:56 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 15:53:27 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void			process_keypress(t_info_args *args)
 		if (key == KEY_L_ARROW || key == KEY_R_ARROW ||
 			key == KEY_U_ARROW || key == KEY_D_ARROW)
 			move_position(args, key);
-		else if (key == KEY_BACKSPACE)
+		else if (key == KEY_BACKSPACE || key == KEY_DEL)
 			delete_elem(args);
 		else if (key == KEY_SPACE)
 			select_elem(args);

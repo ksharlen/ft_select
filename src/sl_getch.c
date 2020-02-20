@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:14:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 15:12:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 15:55:39 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,20 @@ static t_key	get_key_arrow(t_byte byte)
 	return (arrow_key);
 }
 
+static t_key	get_key_combo(t_byte sym)
+{
+	t_key	key;
+
+	key = KEY_UNKNOW;
+	if (sym == '3')
+	{
+		sl_read(STDWORK, &sym, 1);
+		if (sym == '~')
+			key = KEY_DEL;
+	}
+	return (key);
+}
+
 static t_key	get_key(void)
 {
 	t_byte	sym;
@@ -61,7 +75,7 @@ static t_key	get_key(void)
 	{
 		sl_read(STDWORK, &sym, 1);
 		if (sym >= '0' && sym <= '9')
-			;
+			key = get_key_combo(sym);
 		else if (sym >= 'A' && sym <= 'D')
 			key = get_key_arrow(sym);
 	}
