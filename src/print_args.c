@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 16:06:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 16:36:04 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	print_selected_args(t_info_args *args)
 		{
 			if (current->status & SELECT)
 			{
+				if (args->status & REV_MODE)
+					revers_word((char *)current->name);
 				--qt_selected;
 				if (qt_selected)
 					ft_printf("%s ", current->name);

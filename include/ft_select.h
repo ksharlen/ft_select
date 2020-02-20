@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 15:08:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 16:33:02 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char		*sl_tgoto(char *cb, int one, int two);
 void		sl_tputs(const char *str, int affcnt, int (*putc)(int));
 int			sl_tgetnum(char *str);
 
-t_info_args	convert_args_to_array(const int argc, char *const *argv);
+t_info_args	convert_args_to_array(int argc, char *const *argv);
 void		process_keypress(t_info_args *args);
 
 ssize_t		sl_read(int fd, void *buf, size_t count);
@@ -63,5 +63,7 @@ void		screen_update(t_info_args *args, struct s_win *wn);
 int			wputchar(int c);
 void		signals_handler(void);
 void		print_selected_args(t_info_args *args);
+void		revers_word(char *name);
+void		delete_list(t_info_args *args);
 
 #endif

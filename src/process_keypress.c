@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 15:53:27 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 16:29:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ static void		delete_elem(t_info_args *args)
 
 void			select_elem(t_info_args *args)
 {
+	if (args->status & REV_MODE)
+		revers_word((char *)args->cur_pos->name);
 	if (args->cur_pos->status & SELECT)
 	{
 		args->cur_pos->status ^= (uint32_t)SELECT;
@@ -121,7 +123,7 @@ void			process_keypress(t_info_args *args)
 	int		key;
 
 	key = 0;
-	while (key != KEY_ESC && args->size)
+	while (args->size)
 	{
 		print_args(args);
 		key = sl_getch(args);
@@ -134,5 +136,10 @@ void			process_keypress(t_info_args *args)
 			select_elem(args);
 		else if (key == KEY_ENTER)
 			break ;
+		else if (key == KEY_ESC)
+		{
+			canon(&g_cpy);
+			exit(EXIT_SUCCESS);
+		}
 	}
 }

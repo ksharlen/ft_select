@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:12:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 22:02:54 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 16:34:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,37 @@ void		screen_update(t_info_args *args, struct s_win *wn)
 {
 	args->wn = *wn;
 	print_args(args);
+}
+
+void		revers_word(char *name)
+{
+	size_t	size_name;
+	size_t	i;
+
+	size_name = ft_strlen(name);
+	i = 0;
+	while (i < (size_name / 2))
+	{
+		ft_swap_sym(&name[i], &name[size_name - i - 1]);
+		++i;
+	}
+}
+
+void	delete_list(t_info_args *args)
+{
+	struct s_arg *del;
+
+	del = NULL;
+	if (args->begin)
+	{
+		while (args->begin)
+		{
+			del = args->begin;
+			args->begin = args->begin->next;
+			free(del);
+		}
+		args->begin = NULL;
+		args->end = NULL;
+		args->size = 0;
+	}
 }
