@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 13:09:58 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 14:55:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # include "ft_limits.h"
 # include "struct.h"
 
-extern struct termios cpy;
+extern struct termios g_cpy;
 
 void		canon(struct termios *cpy_cfg);
 void		no_canon(struct termios *cpy_cfg);

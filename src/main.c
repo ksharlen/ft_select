@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:26:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 13:09:49 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 14:55:07 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-struct termios	cpy;
+struct termios	g_cpy;
 
 int		main(int argc, char **argv)
 {
@@ -23,11 +23,11 @@ int		main(int argc, char **argv)
 	{
 		init_term(&init);
 		args = convert_args_to_array(argc - 1, argv + 1);
-		no_canon(&cpy);
+		no_canon(&g_cpy);
 		init_termcap(&args);
 		signals_handler();
 		process_keypress(&args);
-		canon(&cpy);
+		canon(&g_cpy);
 	}
 	return (0);
 }

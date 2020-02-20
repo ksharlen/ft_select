@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 12:29:03 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 14:54:00 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 14:55:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	sig_suspend(void)
 {
-	canon(&cpy);
+	canon(&g_cpy);
 	signal(SIGTSTP, SIG_DFL);
 	ioctl(STDWORK, TIOCSTI, "\x1A");
 }
@@ -26,12 +26,12 @@ static void	handler(int sig)
 	if (sig == SIGINT || sig == SIGABRT || sig == SIGSTOP ||
 		sig == SIGKILL || sig == SIGQUIT)
 	{
-		canon(&cpy);
+		canon(&g_cpy);
 		exit(EXIT_SUCCESS);
 	}
 	else if (sig == SIGCONT)
 	{
-		no_canon(&cpy);
+		no_canon(&g_cpy);
 		signals_handler();
 	}
 }
