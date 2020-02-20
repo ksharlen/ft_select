@@ -6,12 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 02:21:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 15:20:56 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
+//!SEGFAULT
 static void		move_position(t_info_args *args, t_key key)
 {
 	if (key == KEY_L_ARROW)
@@ -108,6 +109,10 @@ void			select_elem(t_info_args *args)
 	{
 		args->cur_pos->status |= SELECT;
 		set_color_selected_elem(args->cur_pos);
+		if (args->cur_pos->next)
+			args->cur_pos = args->cur_pos->next;
+		else
+			args->cur_pos = args->begin;
 	}
 }
 
@@ -127,5 +132,7 @@ void			process_keypress(t_info_args *args)
 			delete_elem(args);
 		else if (key == KEY_SPACE)
 			select_elem(args);
+		else if (key == KEY_ENTER)
+			break ;
 	}
 }

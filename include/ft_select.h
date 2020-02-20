@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 14:55:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 15:08:51 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void		get_win_size(struct s_win *wn);
 void		screen_update(t_info_args *args, struct s_win *wn);
 int			wputchar(int c);
 void		signals_handler(void);
+void		print_selected_args(t_info_args *args);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 02:27:59 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 15:19:07 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,42 @@ int			wputchar(int c)
 {
 	write(STDWORK, &c, 1);
 	return (c);
+}
+
+static size_t	get_qt_selected(struct s_arg *args)
+{
+	size_t	qt_selected;
+
+	qt_selected = 0;
+	while (args)
+	{
+		if (args->status & SELECT)
+			++qt_selected;
+		args = args->next;
+	}
+	return (qt_selected);
+}
+
+void	print_selected_args(t_info_args *args)
+{
+	struct s_arg	*current;
+	size_t			qt_selected;
+
+	if (args->begin)
+	{
+		qt_selected = get_qt_selected(args->begin);
+		current = args->begin;
+		while (current)
+		{
+			if (current->status & SELECT)
+			{
+				--qt_selected;
+				ft_printf("%s%c", current->name, qt_selected ? ' ' : 0);
+			}
+			current = current->next;
+		}
+	}
+	write(STDOUT_FILENO, "\n", 1);
 }
 
 //TODO: need fix gut when resize window

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:14:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 13:54:04 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 15:12:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ uint32_t		sl_getch(t_info_args *args)
 		return (sym);
 	else if (sym == 127)
 		return (KEY_BACKSPACE);
+	else if (sym == '\n')
+		return (KEY_ENTER);
 	return (sym);
 }

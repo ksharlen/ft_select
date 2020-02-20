@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 00:10:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/20 15:02:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ enum			e_key
 	KEY_D_ARROW,
 	KEY_ESC,
 	KEY_BACKSPACE,
+	KEY_ENTER,
 	KEY_UNKNOW,
 	KEY_SPACE = 32,
 };
