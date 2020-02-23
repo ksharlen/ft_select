@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 16:27:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/23 20:46:23 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,25 +68,16 @@ static void		convert_args(t_info_args *args,
 	}
 }
 
-t_info_args		convert_args_to_array(int argc, char *const *argv)
+void	convert_args_to_array(int argc, char *const *argv, t_info_args *args)
 {
-	t_info_args	args;
-
-	args.begin = NULL;
-	args.end = NULL;
-	args.max_len_arg = 0;
-	args.num_cur_pos = 0;
-	args.size = get_size_args(argc, argv);
-	if (argc && argv[0][0] == '-' && argv[0][1] == 'r')
-	{
-		args.status |= REV_MODE;
-		--argc;
-		++argv;
-	}
-	if (args.size)
-		convert_args(&args, argc, argv);
+	args->begin = NULL;
+	args->end = NULL;
+	args->max_len_arg = 0;
+	args->num_cur_pos = 0;
+	args->size = get_size_args(argc, argv);
+	if (args->size)
+		convert_args(args, argc, argv);
 	else
 		syserror(NULL, "arg or args is empty strings");
-	args.cur_pos = args.begin;
-	return (args);
+	args->cur_pos = args->begin;
 }

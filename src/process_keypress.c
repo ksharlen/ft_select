@@ -6,13 +6,11 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/23 20:32:36 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/23 20:43:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
-
-//!SEGFAULT
 
 void			select_elem(t_info_args *args)
 {
