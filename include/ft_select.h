@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 16:33:02 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/23 20:33:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,7 @@ void		signals_handler(void);
 void		print_selected_args(t_info_args *args);
 void		revers_word(char *name);
 void		delete_list(t_info_args *args);
+void		move_position(t_info_args *args, t_key key);
+void		delete_elem(t_info_args *args);
 
 #endif

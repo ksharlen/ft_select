@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 16:36:04 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/21 17:09:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	print_args(t_info_args *args)
 		current = args->begin;
 		while (current)
 		{
-			if (args->wn.cols < (sym_qt_in_line + args->max_len_arg + (args->wn.cols / args->max_len_arg)))
+			if (args->wn.cols < (sym_qt_in_line + (args->max_len_arg)))
 			{
 				ft_putchar_fd('\n', STDWORK);
 				sym_qt_in_line = 0;
@@ -82,7 +82,7 @@ void	print_args(t_info_args *args)
 				current->color_bck ? current->color_bck : "",
 				current == args->cur_pos ? args->italics : "",
 					args->max_len_arg, current->name, FT_COLOR_DFLT);
-			sym_qt_in_line += args->max_len_arg;
+			sym_qt_in_line += args->max_len_arg + 1;
 			current = current->next;
 		}
 	}

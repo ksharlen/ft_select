@@ -11,7 +11,9 @@ SRC		:=	main.c\
 				sl_getch.c\
 				print_args.c\
 				color_file.c\
-				signals_handler.c
+				signals_handler.c\
+				parse_arrow_keys.c\
+				delete_elem.c
 
 OBJ		:=	$(SRC:.c=.o)
 
