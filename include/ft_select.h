@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/23 20:44:14 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:00:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		process_keypress(t_info_args *args);
 
 ssize_t		sl_read(int fd, void *buf, size_t count);
 uint32_t	sl_getch(t_info_args *args);
-void		print_args(t_info_args *args);
+void		refresh_screen(t_info_args *args);
 
 int			sl_putchar(int c);
 void		check_colors_file(struct s_arg *elem);

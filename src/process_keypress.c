@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/23 20:43:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:00:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void			process_keypress(t_info_args *args)
 	key = 0;
 	while (args->size)
 	{
-		print_args(args);
+		refresh_screen(args);
 		key = sl_getch(args);
 		if (key == KEY_L_ARROW || key == KEY_R_ARROW ||
 			key == KEY_U_ARROW || key == KEY_D_ARROW)

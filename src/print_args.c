@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 14:46:09 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:05:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,31 +58,37 @@ void	print_selected_args(t_info_args *args)
 	}
 }
 
-//TODO: need fix gut when resize window
-void	print_args(t_info_args *args)
+static void		print_args(t_info_args *args)
 {
 	struct s_arg	*current;
 	size_t			sym_qt_in_line;
 
-	if (args->size)
+	current = args->begin;
+	while (current)
 	{
 		sym_qt_in_line = 0;
-		sl_tputs(args->return_cursor, 1, wputchar);
-		current = args->begin;
-		while (current)
+		if (args->wn.cols < (sym_qt_in_line + (args->max_len_arg + 1)))
 		{
-			if (args->wn.cols < (sym_qt_in_line + (args->max_len_arg)))
-			{
-				ft_putchar_fd('\n', STDWORK);
-				sym_qt_in_line = 0;
-			}
-			ft_printf("%v%s%s%s%-*s%s ", STDWORK, current->color_text,
-				current->color_bck ? current->color_bck : "",
-				current == args->cur_pos ? args->italics : "",
-					args->max_len_arg, current->name, FT_COLOR_DFLT);
-			sym_qt_in_line += args->max_len_arg + 1;
-			current = current->next;
+			ft_putchar_fd('\n', STDWORK);
+			sym_qt_in_line = 0;
 		}
+		ft_printf("%v%s%s%s%-*s%s ", STDWORK, current->color_text,
+			current->color_bck ? current->color_bck : "",
+			current == args->cur_pos ? args->italics : "",
+				args->max_len_arg, current->name, FT_COLOR_DFLT);
+		sym_qt_in_line += args->max_len_arg + 1;
+		current = current->next;
+	}
+	//TODO: need delete last space
+}
+
+//TODO: need fix gut when resize window
+void	refresh_screen(t_info_args *args)
+{
+	if (args->size)
+	{
+		sl_tputs(args->return_cursor, 1, wputchar);
+		print_args(args);
 		sl_tputs(args->return_cursor, 1, wputchar);
 	}
 	else
