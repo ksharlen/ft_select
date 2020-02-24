@@ -16,7 +16,8 @@ SRC		:=	main.c\
 				delete_elem.c\
 				get_flags.c\
 				bonus.c\
-				fill_filename_dir.c
+				fill_filename_dir.c\
+				delete_mode.c
 
 OBJ		:=	$(SRC:.c=.o)
 

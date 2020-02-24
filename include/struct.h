@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 20:27:40 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 21:38:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 # include "libft.h"
 
-enum			e_status_arg
+enum				e_status_arg
 {
 	SELECTED,
 	NOT_SELECTED
 };
 
-enum			e_key
+enum				e_key
 {
 	KEY_L_ARROW = 1000,
 	KEY_R_ARROW,
@@ -37,6 +37,12 @@ enum			e_key
 	KEY_SPACE = 32,
 };
 
+struct				s_del_mode
+{
+	const char	*dirname;
+	uint8_t		status;
+};
+
 struct				s_last_deleted_elem
 {
 	const char	*name;
@@ -45,13 +51,13 @@ struct				s_last_deleted_elem
 
 struct				s_arg
 {
-	struct s_arg	*next;
-	struct s_arg	*prev;
-	size_t			qt_sym;
-	int				status;
-	char			*color_text;
-	char			*color_bck;
-	const char		*name;
+	struct s_arg		*next;
+	struct s_arg		*prev;
+	size_t				qt_sym;
+	int					status;
+	char				*color_text;
+	char				*color_bck;
+	const char			*name;
 };
 
 struct				s_win
@@ -67,6 +73,7 @@ typedef	struct		s_info_args
 	struct s_arg				*begin;//
 	struct s_arg				*end;//
 	struct s_arg				*cur_pos;//
+	struct s_del_mode			*sdm;
 	size_t						size;//
 	uint32_t					status;//
 	uint32_t					max_len_arg;//

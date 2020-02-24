@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 19:58:10 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 21:10:39 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 21:39:20 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	fill_filename_dir(t_info_args *args, const char *dirname)
 
 	args_init(args);
 //TODO: need added check dir for delete i think we can delete internal dir
+	delete_mode(dirname, args);
 	fd = sl_opendir(dirname);
 	get_files(args, fd);
 	if (closedir(fd) == -1)

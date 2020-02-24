@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 19:08:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 21:46:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@
 # define C_FILE			256
 # define O_FILE			512
 # define MAKEFILE		1024
+
+# define READ_FILES		1
+# define DELETE_FILES	2
 
 # define COLOR_DFLT			"\x1b[38;2;255;255;255m"
 # define COLOR_C_FILE		"\x1b[38;2;255;204;0m"

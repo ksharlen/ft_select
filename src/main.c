@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:26:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 20:48:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 22:17:23 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static void	select_mode(t_info_args *args, int argc, char **argv)
 
 int			main(int argc, char **argv)
 {
-	struct s_init	init;
-	t_info_args		args;
+	struct s_init		init;
+	t_info_args			args;
 
 	get_flags(&args, &argc, &argv);
 	if (argc > 0)
@@ -48,7 +48,7 @@ int			main(int argc, char **argv)
 		process_keypress(&args);
 		canon(&g_cpy);
 		if (args.status & DEL_MODE)
-			;//TODO DELETE
+			delete_files(&args);//TODO DELETE
 		else
 			print_selected_args(&args);
 		delete_list(&args);

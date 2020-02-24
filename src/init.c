@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:43:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 20:23:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 21:38:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ void	args_init(t_info_args *args)
 	args->lde.name = NULL;
 	args->lde.size_name = 0;
 	args->size = 0;
+	args->sdm = NULL;
 }

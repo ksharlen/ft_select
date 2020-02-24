@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 20:47:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 22:17:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,8 @@ void		init_new_elem(t_info_args *args, const char *argv);
 void		print_last_deleted_elem(t_info_args *args);
 void		get_flags(t_info_args *args, int *argc, char ***argv);
 void		fill_filename_dir(t_info_args *args, const char *dirname);
+void		delete_files(t_info_args *args);
+void		delete_file(struct s_arg *current, t_info_args *args);
+void		delete_mode(const char *dirname, t_info_args *args);
 
 #endif
