@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:21:49 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:23:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-int			wputchar(int c)
+int				wputchar(int c)
 {
 	write(STDWORK, &c, 1);
 	return (c);
@@ -32,7 +32,7 @@ static size_t	get_qt_selected(struct s_arg *args)
 	return (qt_selected);
 }
 
-void	print_selected_args(t_info_args *args)
+void			print_selected_args(t_info_args *args)
 {
 	struct s_arg	*current;
 	size_t			qt_selected;
@@ -82,8 +82,7 @@ static void		print_args(t_info_args *args)
 	}
 }
 
-//TODO: need fix gut when resize window
-void	refresh_screen(t_info_args *args)
+void			refresh_screen(t_info_args *args)
 {
 	sl_tputs(args->return_cursor, 1, wputchar);
 	print_args(args);

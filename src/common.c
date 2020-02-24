@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:12:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:00:13 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:22:39 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		revers_word(char *name)
 	}
 }
 
-void	delete_list(t_info_args *args)
+void		delete_list(t_info_args *args)
 {
 	struct s_arg *del;
 

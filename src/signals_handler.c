@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 12:29:03 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 14:55:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:23:23 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	handler(int sig)
 	}
 }
 
-void	signals_handler(void)
+void		signals_handler(void)
 {
 	signal(SIGINT, handler);
 	signal(SIGTSTP, handler);

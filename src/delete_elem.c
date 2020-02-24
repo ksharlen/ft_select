@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 20:32:15 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 14:45:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:22:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void		delete_last_elem(t_info_args *args)
 	args->cur_pos = prev_last;
 }
 
-static void	delete_elem_in_list(t_info_args *args)
+static void		delete_elem_in_list(t_info_args *args)
 {
 	struct s_arg	*del;
 
@@ -46,7 +46,7 @@ static void	delete_elem_in_list(t_info_args *args)
 	free(del);
 }
 
-static void	delete_first_elem(t_info_args *args)
+static void		delete_first_elem(t_info_args *args)
 {
 	struct s_arg *del;
 
@@ -57,7 +57,7 @@ static void	delete_first_elem(t_info_args *args)
 	free(del);
 }
 
-void		delete_elem(t_info_args *args)
+void			delete_elem(t_info_args *args)
 {
 	struct s_arg	*del;
 

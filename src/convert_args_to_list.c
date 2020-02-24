@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:20:16 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:23:12 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ static void		convert_args(t_info_args *args,
 	}
 }
 
-void	convert_args_to_array(int argc, char *const *argv, t_info_args *args)
+void			convert_args_to_array(int argc,
+	char *const *argv, t_info_args *args)
 {
 	args->begin = NULL;
 	args->end = NULL;

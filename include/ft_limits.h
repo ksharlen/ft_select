@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 16:24:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:24:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,6 @@
 # define NON_COLOR_BCK	"\x1b[49m"
 
 # define STDWORK 2
-
-//!TMP
-# define P_UNUSED(var) (void)(var)
-# define EXIT() exit(EXIT_FAILURE)
 
 typedef uint32_t	t_key;
 typedef uint8_t		t_byte;
