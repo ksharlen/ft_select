@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 20:32:15 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/23 20:36:29 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 14:45:20 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void		delete_elem(t_info_args *args)
 		else
 			delete_elem_in_list(args);
 		--args->size;
+		ft_print_nsym(STDWORK, ' ', (args->wn.cols) * (args->wn.rows));
 	}
 	else
 		clean_list(args);
