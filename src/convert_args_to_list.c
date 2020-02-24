@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/23 20:46:23 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:18:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void		init_new_elem(t_info_args *args, const char *argv)
 	new->name = argv;
 	new->qt_sym = ft_strlen(argv);
 	if (new->qt_sym > args->max_len_arg)
-		args->max_len_arg = new->qt_sym;
+		args->max_len_arg = new->qt_sym + 1;
 	new->status = 0;
 	check_colors_file(new);
 	if (args->begin == NULL)
