@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 21:46:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 00:29:59 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@
 # define COLOR_BCK_DFLT		"\x1b[48;2;255;255;255m"
 # define NON_COLOR_BCK		"\x1b[49m"
 
-# define DELETE_ELEM		"last deleted: "
+# define DELETE_ELEM		"Last deleted: "
+# define READ_ONLY_MODE		"read only mode"
+
+# define SIZE_ROM			14
 # define SIZE_STR_DEL_ELEM	14
 
 # define STDWORK		2

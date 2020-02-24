@@ -6,11 +6,20 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:37:17 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 21:40:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 00:35:58 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
+
+void		set_pos_cursor(int x, int y)
+{
+	char	*str;
+
+	str = sl_tgetstr("cm");
+	str = sl_tgoto(str, x, y);
+	sl_tputs(str, 1, wputchar);
+}
 
 void		no_canon(struct termios *cpy_cfg)
 {

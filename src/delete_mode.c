@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 21:23:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 00:23:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 01:02:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,11 @@ void	delete_mode(const char *dirname, t_info_args *args)
 	args->sdm->dirname = dirname;
 	if (*dirname)
 	{
-		//!read only mode
 		if (!ft_memcmp((char *)dirname, "../", sizeof(char) * 3) ||
-			!ft_memcmp((char *)dirname, "/", sizeof(char) * 3))
+			!ft_memcmp((char *)dirname, "/", sizeof(char) * 1))
 			args->sdm->status |= READ_FILES;
 		else
 			args->sdm->status |= DELETE_FILES;
-		//!del mode
 	}
 }
 
@@ -66,6 +64,4 @@ void	delete_files(t_info_args *args)
 			current = current->next;
 		}
 	}
-	exit(EXIT_FAILURE);
-	//clean struct
 }

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 22:17:46 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 00:36:20 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char		*sl_tgetstr(char *cb);
 char		*sl_tgoto(char *cb, int one, int two);
 void		sl_tputs(const char *str, int affcnt, int (*putc)(int));
 int			sl_tgetnum(char *str);
+void		set_pos_cursor(int x, int y);
 
 /*
 **ERRORS
@@ -100,7 +101,7 @@ void		init_new_elem(t_info_args *args, const char *argv);
 /*
 **BONUS
 */
-void		print_last_deleted_elem(t_info_args *args);
+void		print_info_line(t_info_args *args);
 void		get_flags(t_info_args *args, int *argc, char ***argv);
 void		fill_filename_dir(t_info_args *args, const char *dirname);
 void		delete_files(t_info_args *args);
