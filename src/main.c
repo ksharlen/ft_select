@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:26:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 20:44:19 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:48:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ int			main(int argc, char **argv)
 		signals_handler();
 		process_keypress(&args);
 		canon(&g_cpy);
-		print_selected_args(&args);
+		if (args.status & DEL_MODE)
+			;//TODO DELETE
+		else
+			print_selected_args(&args);
 		delete_list(&args);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 20:18:41 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:47:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <sys/ioctl.h>
 # include <signal.h>
 # include <dirent.h>
+# include <stdio.h>
 
 # include "libft.h"
 # include "ft_dbl_list_cycl.h"
