@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 19:14:39 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:18:41 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <termcap.h>
 # include <sys/ioctl.h>
 # include <signal.h>
+# include <dirent.h>
 
 # include "libft.h"
 # include "ft_dbl_list_cycl.h"
@@ -33,6 +34,7 @@ extern struct termios	g_cpy;
 */
 void		init_term(struct s_init *init);
 void		init_termcap(t_info_args *args);
+void		args_init(t_info_args *args);
 
 /*
 **TERMCAP
@@ -92,11 +94,13 @@ void		move_position(t_info_args *args, t_key key);
 void		delete_elem(t_info_args *args);
 void		convert_args_to_array(int argc,
 	char *const *argv, t_info_args *args);
+void		init_new_elem(t_info_args *args, const char *argv);
 
 /*
 **BONUS
 */
 void		print_last_deleted_elem(t_info_args *args);
 void		get_flags(t_info_args *args, int *argc, char ***argv);
+void		fill_filename_dir(t_info_args *args, const char *dirname);
 
 #endif

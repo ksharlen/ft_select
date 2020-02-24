@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 16:25:18 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:23:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,15 @@ struct				s_win
 
 typedef	struct		s_info_args
 {
-	struct s_last_deleted_elem	lde;
-	struct s_win				wn;
-	struct s_arg				*begin;
-	struct s_arg				*end;
-	struct s_arg				*cur_pos;
-	size_t						size;
+	struct s_last_deleted_elem	lde;//
+	struct s_win				wn;//
+	struct s_arg				*begin;//
+	struct s_arg				*end;//
+	struct s_arg				*cur_pos;//
+	size_t						size;//
 	uint32_t					status;
-	uint32_t					max_len_arg;
-	int32_t						num_cur_pos;
+	uint32_t					max_len_arg;//
+	int32_t						num_cur_pos;//
 	char						*italics;
 	char						*return_cursor;
 }					t_info_args;

@@ -15,7 +15,8 @@ SRC		:=	main.c\
 				parse_arrow_keys.c\
 				delete_elem.c\
 				get_flags.c\
-				bonus.c
+				bonus.c\
+				fill_filename_dir.c
 
 OBJ		:=	$(SRC:.c=.o)
 

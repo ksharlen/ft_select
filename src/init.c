@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:43:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/20 15:30:48 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:23:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,15 @@ void	init_termcap(t_info_args *args)
 	args->wn.rows = sl_tgetnum("li");
 	clear = sl_tgetstr("cl");
 	sl_tputs(clear, 1, wputchar);
+}
+
+void	args_init(t_info_args *args)
+{
+	args->begin = NULL;
+	args->end = NULL;
+	args->max_len_arg = 0;
+	args->num_cur_pos = 0;
+	args->lde.name = NULL;
+	args->lde.size_name = 0;
+	args->size = 0;
 }

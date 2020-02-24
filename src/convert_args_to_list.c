@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:44:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:18:51 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static size_t	get_size_args(const int argc, char *const *argv)
 	return (qt_not_empty_args);
 }
 
-static void		init_new_elem(t_info_args *args, const char *argv)
+void			init_new_elem(t_info_args *args, const char *argv)
 {
 	struct s_arg	*new;
 
@@ -38,7 +38,6 @@ static void		init_new_elem(t_info_args *args, const char *argv)
 	new->qt_sym = ft_strlen(argv);
 	if (new->qt_sym > args->max_len_arg)
 		args->max_len_arg = new->qt_sym;
-	new->status = 0;
 	check_colors_file(new);
 	if (args->begin == NULL)
 	{
@@ -71,12 +70,7 @@ static void		convert_args(t_info_args *args,
 void			convert_args_to_array(int argc,
 	char *const *argv, t_info_args *args)
 {
-	args->begin = NULL;
-	args->end = NULL;
-	args->max_len_arg = 0;
-	args->num_cur_pos = 0;
-	args->lde.name = NULL;
-	args->lde.size_name = 0;
+	args_init(args);
 	args->size = get_size_args(argc, argv);
 	if (args->size)
 		convert_args(args, argc, argv);
