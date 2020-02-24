@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 19:03:46 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 19:56:04 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:46:03 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void	get_flags(t_info_args *args, int *argc, char ***argv)
 	char	**p_argv;
 
 	--(*argc);
+	p_argv = *argv;
+	++p_argv;
 	if (*argc > 0)
 	{
 		args->status = 0;
-		p_argv = *argv;
-		++p_argv;
 		if (p_argv[0][0] == '-')
 		{
 			if (p_argv[0][1])
@@ -40,7 +40,7 @@ void	get_flags(t_info_args *args, int *argc, char ***argv)
 			}
 			++p_argv;
 			--(*argc);
-			*argv = p_argv;
 		}
 	}
+	*argv = p_argv;
 }

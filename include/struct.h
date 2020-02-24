@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 20:23:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:27:40 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@ typedef	struct		s_info_args
 	struct s_arg				*end;//
 	struct s_arg				*cur_pos;//
 	size_t						size;//
-	uint32_t					status;
+	uint32_t					status;//
 	uint32_t					max_len_arg;//
 	int32_t						num_cur_pos;//
-	char						*italics;
-	char						*return_cursor;
+	char						*italics;//
+	char						*return_cursor;//
 }					t_info_args;
 
 struct				s_init

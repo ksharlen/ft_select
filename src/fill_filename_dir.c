@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 19:58:10 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 20:24:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:26:58 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ void	fill_filename_dir(t_info_args *args, const char *dirname)
 	DIR	*fd;
 
 	args_init(args);
+//TODO: need added check dir for delete i think we can delete internal dir
 	fd = sl_opendir(dirname);
 	get_files(args, fd);
+	if (!args->size)
+		syserror(NULL, "dir is empty");
 }
