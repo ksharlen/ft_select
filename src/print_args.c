@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:12:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:17:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,11 @@ static void		print_args(t_info_args *args)
 			ft_putchar_fd('\n', STDWORK);
 			sym_qt_in_line = 0;
 		}
-		ft_printf("%v%s%s%s%-*s%s ", STDWORK, current->color_text,
+		ft_printf("%v%s%s%s%-*s%s%s", STDWORK, current->color_text,
 			current->color_bck ? current->color_bck : "",
 			current == args->cur_pos ? args->italics : "",
-				args->max_len_arg, current->name, FT_COLOR_DFLT);
+				args->max_len_arg, current->name, FT_COLOR_DFLT,
+				current->next ? " " : "");
 		sym_qt_in_line += args->max_len_arg + 1;
 		current = current->next;
 	}
@@ -85,12 +86,7 @@ static void		print_args(t_info_args *args)
 //TODO: need fix gut when resize window
 void	refresh_screen(t_info_args *args)
 {
-	if (args->size)
-	{
-		sl_tputs(args->return_cursor, 1, wputchar);
-		print_args(args);
-		sl_tputs(args->return_cursor, 1, wputchar);
-	}
-	else
-		EXIT();
+	sl_tputs(args->return_cursor, 1, wputchar);
+	print_args(args);
+	sl_tputs(args->return_cursor, 1, wputchar);
 }
