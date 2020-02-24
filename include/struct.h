@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:24:23 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:32:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ struct				s_arg
 {
 	struct s_arg	*next;
 	struct s_arg	*prev;
-	const char		*name;
 	size_t			qt_sym;
+	int				status;
 	char			*color_text;
 	char			*color_bck;
-	int				status;
+	const char		*name;
 };
 
 struct				s_win
@@ -60,19 +60,13 @@ typedef	struct		s_info_args
 	struct s_arg	*begin;
 	struct s_arg	*end;
 	struct s_arg	*cur_pos;
-	char			*italics;
-	char			*return_cursor;
 	size_t			size;
 	uint32_t		status;
 	uint32_t		max_len_arg;
 	int32_t			num_cur_pos;
+	char			*italics;
+	char			*return_cursor;
 }					t_info_args;
-
-struct				s_cursor
-{
-	size_t		x;
-	size_t		y;
-};
 
 struct				s_init
 {

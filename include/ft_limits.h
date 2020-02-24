@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:24:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:32:57 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 # include "libft.h"
 
-# define SELECT		1
-# define COLOR_FILE	2
-# define REV_MODE	4
-# define C_FILE		256
-# define O_FILE		512
-# define MAKEFILE	1024
+# define SELECT			1
+# define COLOR_FILE		2
+# define REV_MODE		4
+# define C_FILE			256
+# define O_FILE			512
+# define MAKEFILE		1024
 
 # define COLOR_DFLT		"\x1b[38;2;255;255;255m"
 # define COLOR_C_FILE	"\x1b[38;2;255;204;0m"
@@ -35,9 +35,9 @@
 # define COLOR_BCK_DFLT	"\x1b[48;2;255;255;255m"
 # define NON_COLOR_BCK	"\x1b[49m"
 
-# define STDWORK 2
+# define STDWORK		2
 
-typedef uint32_t	t_key;
-typedef uint8_t		t_byte;
+typedef uint32_t		t_key;
+typedef uint8_t			t_byte;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 01:44:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/19 20:12:13 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:34:52 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void		check_colors_file(struct s_arg *elem)
 {
 	char	*sym;
 
-	if ((sym = strrchr(elem->name, '.')))
+	if ((sym = ft_strrchr(elem->name, '.')))
 		set_color_file(elem, sym + 1);
 	else
 	{
