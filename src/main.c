@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:26:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 22:17:23 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 00:18:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ struct termios	g_cpy;
 
 static void	select_mode(t_info_args *args, int argc, char **argv)
 {
+// printf("dirname: %s\n", *argv);
+// exit(EXIT_FAILURE);
 	if (args->status & DEL_MODE)
 	{
 		if (argc == 1)
