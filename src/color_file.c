@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 01:44:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:34:52 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 16:50:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	set_color_file(struct s_arg *elem, char *sym)
 {
 	if (*sym)
 	{
-		if (*sym == 'o')
+		if (*sym == 'o' && !*(sym + 1))
 		{
 			elem->status |= O_FILE;
 			elem->status |= COLOR_FILE;
@@ -24,7 +24,7 @@ static void	set_color_file(struct s_arg *elem, char *sym)
 			elem->color_bck = NULL;
 			return ;
 		}
-		else if (*sym == 'c')
+		else if (*sym == 'c' && !*(sym + 1))
 		{
 			elem->status |= C_FILE;
 			elem->status |= COLOR_FILE;

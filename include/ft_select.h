@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:48:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 16:24:47 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include "ft_limits.h"
 # include "struct.h"
 
-extern struct termios g_cpy;
+extern struct termios	g_cpy;
 
 /*
 **INIT
@@ -96,6 +96,6 @@ void		convert_args_to_array(int argc,
 /*
 **BONUS
 */
-void	print_last_deleted_elem(t_info_args *args);
+void		print_last_deleted_elem(t_info_args *args);
 
 #endif

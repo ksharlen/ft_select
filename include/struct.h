@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:45:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 16:25:18 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,11 @@ enum			e_key
 	KEY_SPACE = 32,
 };
 
-struct	s_last_deleted_elem
+struct				s_last_deleted_elem
 {
 	const char	*name;
 	size_t		size_name;
 };
-
 
 struct				s_arg
 {
