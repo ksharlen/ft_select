@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 16:24:47 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 19:14:39 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ void		convert_args_to_array(int argc,
 **BONUS
 */
 void		print_last_deleted_elem(t_info_args *args);
+void		get_flags(t_info_args *args, int *argc, char ***argv);
 
 #endif

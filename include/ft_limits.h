@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:55:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 19:08:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define SELECT			1
 # define COLOR_FILE		2
 # define REV_MODE		4
+# define DEL_MODE		8
 # define C_FILE			256
 # define O_FILE			512
 # define MAKEFILE		1024
