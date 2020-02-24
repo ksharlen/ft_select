@@ -13,7 +13,8 @@ SRC		:=	main.c\
 				color_file.c\
 				signals_handler.c\
 				parse_arrow_keys.c\
-				delete_elem.c
+				delete_elem.c\
+				bonus.c
 
 OBJ		:=	$(SRC:.c=.o)
 

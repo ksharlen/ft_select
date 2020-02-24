@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:23:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:48:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,7 @@ void			refresh_screen(t_info_args *args)
 {
 	sl_tputs(args->return_cursor, 1, wputchar);
 	print_args(args);
+	print_last_deleted_elem(args);
+	//TODO: here bonus
 	sl_tputs(args->return_cursor, 1, wputchar);
 }

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:32:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:45:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ enum			e_key
 	KEY_SPACE = 32,
 };
 
+struct	s_last_deleted_elem
+{
+	const char	*name;
+	size_t		size_name;
+};
+
+
 struct				s_arg
 {
 	struct s_arg	*next;
@@ -56,16 +63,17 @@ struct				s_win
 
 typedef	struct		s_info_args
 {
-	struct s_win	wn;
-	struct s_arg	*begin;
-	struct s_arg	*end;
-	struct s_arg	*cur_pos;
-	size_t			size;
-	uint32_t		status;
-	uint32_t		max_len_arg;
-	int32_t			num_cur_pos;
-	char			*italics;
-	char			*return_cursor;
+	struct s_last_deleted_elem	lde;
+	struct s_win				wn;
+	struct s_arg				*begin;
+	struct s_arg				*end;
+	struct s_arg				*cur_pos;
+	size_t						size;
+	uint32_t					status;
+	uint32_t					max_len_arg;
+	int32_t						num_cur_pos;
+	char						*italics;
+	char						*return_cursor;
 }					t_info_args;
 
 struct				s_init

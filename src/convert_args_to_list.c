@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:23:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:44:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void			convert_args_to_array(int argc,
 	args->end = NULL;
 	args->max_len_arg = 0;
 	args->num_cur_pos = 0;
+	args->lde.name = NULL;
+	args->lde.size_name = 0;
 	args->size = get_size_args(argc, argv);
 	if (args->size)
 		convert_args(args, argc, argv);

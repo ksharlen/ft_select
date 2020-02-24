@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:33:16 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:48:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,10 @@ void		move_position(t_info_args *args, t_key key);
 void		delete_elem(t_info_args *args);
 void		convert_args_to_array(int argc,
 	char *const *argv, t_info_args *args);
+
+/*
+**BONUS
+*/
+void	print_last_deleted_elem(t_info_args *args);
 
 #endif
