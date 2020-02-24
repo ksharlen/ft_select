@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:05:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/24 15:12:32 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ static void		print_args(t_info_args *args)
 	struct s_arg	*current;
 	size_t			sym_qt_in_line;
 
+	sym_qt_in_line = 0;
 	current = args->begin;
 	while (current)
 	{
-		sym_qt_in_line = 0;
 		if (args->wn.cols < (sym_qt_in_line + (args->max_len_arg + 1)))
 		{
 			ft_putchar_fd('\n', STDWORK);
