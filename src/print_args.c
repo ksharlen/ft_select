@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:13:13 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 16:37:29 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 16:45:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,8 @@ void			refresh_screen(t_info_args *args)
 	size_t	qty_elems_to_col;
 
 	qty_elems_to_col = args->wn.cols / (args->max_len_arg + 1);
-	if ((args->size / qty_elems_to_col) > (args->wn.rows - 1))
+	if (!qty_elems_to_col ||
+		((args->size / qty_elems_to_col) > (args->wn.rows - 1)))
 		print_small_window(args);
 	else
 	{
