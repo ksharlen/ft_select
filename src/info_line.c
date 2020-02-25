@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 20:02:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 22:37:24 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 22:38:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void		draw_search_mode(t_info_args *args, size_t *shift)
 
 	set_pos_cursor(*(shift), args->wn.rows);
 	*shift += ft_write(STDWORK, STR_SEARCH_MODE, SIZE_SEARCH_MODE);
-	if ((args->wn.cols - 3) < (args->s_buf.len_str + *shift))
+	if ((args->wn.cols) < (args->s_buf.len_str + *shift))
 	{
 		len_input = (args->wn.cols - *shift) - 3;
 		ft_write(STDWORK, args->s_buf.buf_search, len_input);
