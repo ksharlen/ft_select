@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:37:17 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 16:02:08 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 15:41:48 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		no_canon(struct termios *cpy_cfg)
 	st_tc = tcgetattr(STDWORK, cpy_cfg);
 	ft_chk_sys_error(st_tc, E_TCGETATTR);
 	new_cfg = *cpy_cfg;
-	new_cfg.c_lflag &= ~(ICANON | ECHO);
+	new_cfg.c_lflag &= ~(ICANON | ECHO | IEXTEN);
 	new_cfg.c_cc[VMIN] = 0;
 	new_cfg.c_cc[VTIME] = 1;
 	st_tc = tcsetattr(STDWORK, TCSANOW, &new_cfg);
