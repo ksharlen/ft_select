@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 20:18:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 14:26:07 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void			init_new_elem(t_info_args *args, const char *argv)
 
 	new = (struct s_arg *)ft_memalloc(sizeof(struct s_arg));
 	ft_chk_null_ptr(new, E_MALLOC);
-	new->name = argv;
+	new->name = ft_strdup(argv);
 	new->qt_sym = ft_strlen(argv);
 	if (new->qt_sym > args->max_len_arg)
 		args->max_len_arg = new->qt_sym;

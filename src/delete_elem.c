@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 20:32:15 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 15:44:58 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 14:38:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void			delete_elem(t_info_args *args)
 
 	if (args->size > 1)
 	{
+		if (args->lde.name)
+			ft_strdel((char **)&args->lde.name);
 		args->lde.name = args->cur_pos->name;
 		args->lde.size_name = args->cur_pos->qt_sym;
 		del = args->cur_pos;

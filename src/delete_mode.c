@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 21:23:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 01:02:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 14:31:47 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,6 @@ void	delete_files(t_info_args *args)
 			current = current->next;
 		}
 	}
+	free(args->sdm);
+	args->sdm = NULL;
 }
