@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 20:32:15 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 14:38:54 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 21:48:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,25 @@ static void		delete_first_elem(t_info_args *args)
 
 void			delete_elem(t_info_args *args)
 {
-	if (args->size > 1)
+	if (!(args->status & SEARCH_MODE))
 	{
-		if (args->lde.name)
-			ft_strdel((char **)&args->lde.name);
-		args->lde.name = args->cur_pos->name;
-		args->lde.size_name = args->cur_pos->qt_sym;
-		//del = args->cur_pos;
-		if (args->cur_pos == args->begin)
-			delete_first_elem(args);
-		else if (args->end == args->cur_pos)
-			delete_last_elem(args);
+		if (args->size > 1)
+		{
+			if (args->lde.name)
+				ft_strdel((char **)&args->lde.name);
+			args->lde.name = args->cur_pos->name;
+			args->lde.size_name = args->cur_pos->qt_sym;
+			//del = args->cur_pos;
+			if (args->cur_pos == args->begin)
+				delete_first_elem(args);
+			else if (args->end == args->cur_pos)
+				delete_last_elem(args);
+			else
+				delete_elem_in_list(args);
+			--args->size;
+			ft_print_nsym(STDWORK, ' ', (args->wn.cols) * (args->wn.rows));
+		}
 		else
-			delete_elem_in_list(args);
-		--args->size;
-		ft_print_nsym(STDWORK, ' ', (args->wn.cols) * (args->wn.rows));
+			clean_list(args);
 	}
-	else
-		clean_list(args);
 }
