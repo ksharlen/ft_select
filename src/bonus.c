@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:46:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 15:31:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 16:10:08 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ static void	draw_status_line(size_t row, size_t pos,
 	ft_printf("%v%s%*s", STDWORK, color,
 		ncols, "");
 	set_pos_cursor(pos, row);
+}
+
+void	print_small_window(t_info_args *args)
+{
+	set_pos_cursor(0, 0);
+	ft_print_nsym(STDWORK, ' ', args->wn.cols * args->wn.rows);
+	set_pos_cursor(0, args->wn.rows / 2);
+	write(STDWORK, LITTLE_WIN, SIZE_LITTLE_WIN);
 }
 
 void	print_info_line(t_info_args *args)

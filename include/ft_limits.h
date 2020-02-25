@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 15:22:19 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 16:05:18 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,11 @@
 
 # define DELETE_ELEM			"Last deleted: "
 # define READ_ONLY_MODE			"read only mode"
+# define LITTLE_WIN				"Window to small"
 
 # define SIZE_ROM				14
 # define SIZE_STR_DEL_ELEM		14
+# define SIZE_LITTLE_WIN		15
 
 # define STDWORK				2
 

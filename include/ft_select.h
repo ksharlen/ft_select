@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 00:36:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 16:05:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void		unset_color_selected_elem(struct s_arg *elem);
 */
 void		get_win_size(struct s_win *wn);
 void		screen_update(t_info_args *args, struct s_win *wn);
+void		print_small_window(t_info_args *args);
 
 /*
 **KEY PRESS
