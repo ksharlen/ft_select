@@ -98,5 +98,7 @@ uint32_t		sl_getch(t_info_args *args)
 		return (KEY_BACKSPACE);
 	else if (sym == '\n')
 		return (KEY_ENTER);
+	else if (sym == ('f' & 0x1f))
+		return (KEY_CTRL_F);
 	return (sym);
 }

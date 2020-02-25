@@ -33,6 +33,7 @@ enum				e_key
 	KEY_BACKSPACE,
 	KEY_ENTER,
 	KEY_DEL,
+	KEY_CTRL_F,
 	KEY_UNKNOW,
 	KEY_SPACE = 32,
 };

@@ -56,6 +56,8 @@ void			process_keypress(t_info_args *args)
 			select_elem(args);
 		else if (key == KEY_ENTER)
 			break ;
+		else if (key == KEY_CTRL_F)
+			search_mode(args);//TODO: search_mode
 		else if (key == KEY_ESC)
 		{
 			canon(&g_cpy);

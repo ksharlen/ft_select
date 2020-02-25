@@ -59,15 +59,13 @@ static void		delete_first_elem(t_info_args *args)
 
 void			delete_elem(t_info_args *args)
 {
-	struct s_arg	*del;
-
 	if (args->size > 1)
 	{
 		if (args->lde.name)
 			ft_strdel((char **)&args->lde.name);
 		args->lde.name = args->cur_pos->name;
 		args->lde.size_name = args->cur_pos->qt_sym;
-		del = args->cur_pos;
+		//del = args->cur_pos;
 		if (args->cur_pos == args->begin)
 			delete_first_elem(args);
 		else if (args->end == args->cur_pos)

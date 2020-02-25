@@ -21,6 +21,7 @@
 # define COLOR_FILE				2
 # define REV_MODE				4
 # define DEL_MODE				8
+# define SEARCH_MODE			16
 # define C_FILE					256
 # define O_FILE					512
 # define MAKEFILE				1024

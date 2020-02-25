@@ -108,5 +108,6 @@ void		fill_filename_dir(t_info_args *args, const char *dirname);
 void		delete_files(t_info_args *args);
 void		delete_file(struct s_arg *current, t_info_args *args);
 void		delete_mode(const char *dirname, t_info_args *args);
+void		search_mode(t_info_args *args);
 
 #endif
