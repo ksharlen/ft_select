@@ -18,7 +18,8 @@ SRC		:=	main.c\
 				bonus.c\
 				fill_filename_dir.c\
 				delete_mode.c\
-				info_line.c
+				info_line.c\
+				search_elem.c
 
 OBJ		:=	$(SRC:.c=.o)
 

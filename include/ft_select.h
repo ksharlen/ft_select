@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:19:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 16:05:45 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 22:07:27 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,7 @@ void		delete_files(t_info_args *args);
 void		delete_file(struct s_arg *current, t_info_args *args);
 void		delete_mode(const char *dirname, t_info_args *args);
 void		search_mode(t_info_args *args);
+void		search_elem(t_info_args *args, t_key sym);
+void		delete_sym_from_search_buf(t_info_args *args);
 
 #endif

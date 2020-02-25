@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 20:32:15 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 21:48:11 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 22:05:34 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,6 @@ void			delete_elem(t_info_args *args)
 		else
 			clean_list(args);
 	}
+	else
+		delete_sym_from_search_buf(args);
 }

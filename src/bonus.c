@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:46:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 21:36:03 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 22:04:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ void	print_small_window(t_info_args *args)
 void	search_mode(t_info_args *args)
 {
 	if (args->status & SEARCH_MODE)
+	{
 		args->status ^= SEARCH_MODE;
+		ft_bzero(args->s_buf.buf_search, sizeof(char) * S_SEARCH);
+		args->s_buf.len_str = 0;
+	}
 	else
 		args->status |= SEARCH_MODE;
 }

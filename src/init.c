@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:43:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 21:38:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 22:03:53 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,6 @@ void	args_init(t_info_args *args)
 	args->lde.size_name = 0;
 	args->size = 0;
 	args->sdm = NULL;
+	ft_bzero(args->s_buf.buf_search, sizeof(char) * S_SEARCH);
+	args->s_buf.len_str = 0;
 }

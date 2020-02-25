@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 21:47:23 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 21:57:53 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ void			process_keypress(t_info_args *args)
 			canon(&g_cpy);
 			exit(EXIT_SUCCESS);
 		}
+		else if (key >= 32 && key <= 126)
+			search_elem(args, key);
 	}
 }

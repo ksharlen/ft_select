@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:32:39 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 20:10:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 21:55:20 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@
 # define SIZE_STR_DEL_ELEM		14
 # define SIZE_LITTLE_WIN		15
 # define SIZE_SEARCH_MODE		12
+
+# define S_SEARCH				255
 
 # define STDWORK				2
 

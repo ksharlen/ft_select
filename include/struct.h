@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 21:38:38 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 22:03:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,12 @@ struct				s_win
 	size_t		rows;
 };
 
+struct				s_buf_search
+{
+	char						buf_search[S_SEARCH];
+	size_t						len_str;
+};
+
 typedef	struct		s_info_args
 {
 	struct s_last_deleted_elem	lde;//
@@ -81,6 +87,7 @@ typedef	struct		s_info_args
 	int32_t						num_cur_pos;//
 	char						*italics;//
 	char						*return_cursor;//
+	struct s_buf_search			s_buf;
 }					t_info_args;
 
 struct				s_init
