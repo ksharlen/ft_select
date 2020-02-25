@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 20:02:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 22:03:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/25 22:37:24 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,19 @@ static void	draw_status_line(size_t row, size_t pos,
 
 static void		draw_search_mode(t_info_args *args, size_t *shift)
 {
+	size_t	len_input;
+	// char	buf[S_SEARCH] = {0};
+
 	set_pos_cursor(*(shift), args->wn.rows);
-	ft_write(STDWORK, STR_SEARCH_MODE, SIZE_SEARCH_MODE);
-	ft_putstr_fd(args->s_buf.buf_search, STDWORK);
+	*shift += ft_write(STDWORK, STR_SEARCH_MODE, SIZE_SEARCH_MODE);
+	if ((args->wn.cols - 3) < (args->s_buf.len_str + *shift))
+	{
+		len_input = (args->wn.cols - *shift) - 3;
+		ft_write(STDWORK, args->s_buf.buf_search, len_input);
+		ft_write(STDWORK, "...", 3);
+	}
+	else
+		ft_putstr_fd(args->s_buf.buf_search, STDWORK);
 }
 
 static size_t	draw_r_only_mode(t_info_args *args)
