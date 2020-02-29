@@ -6,11 +6,36 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:43:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 22:03:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 14:19:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
+
+void			init_new_elem(t_info_args *args, const char *argv)
+{
+	struct s_arg	*new;
+
+	new = (struct s_arg *)ft_memalloc(sizeof(struct s_arg));
+	ft_chk_null_ptr(new, E_MALLOC);
+	new->name = ft_strdup(argv);
+	new->qt_sym = ft_strlen(argv);
+	if (new->qt_sym > args->max_len_arg)
+		args->max_len_arg = new->qt_sym;
+	check_colors_file(new);
+	if (args->begin == NULL)
+	{
+		args->begin = new;
+		new->prev = NULL;
+	}
+	else
+	{
+		new->prev = args->end;
+		args->end->next = new;
+	}
+	new->next = NULL;
+	args->end = new;
+}
 
 void	init_term(struct s_init *init)
 {

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:21:19 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 14:26:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 14:19:52 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,31 +26,6 @@ static size_t	get_size_args(const int argc, char *const *argv)
 		++i;
 	}
 	return (qt_not_empty_args);
-}
-
-void			init_new_elem(t_info_args *args, const char *argv)
-{
-	struct s_arg	*new;
-
-	new = (struct s_arg *)ft_memalloc(sizeof(struct s_arg));
-	ft_chk_null_ptr(new, E_MALLOC);
-	new->name = ft_strdup(argv);
-	new->qt_sym = ft_strlen(argv);
-	if (new->qt_sym > args->max_len_arg)
-		args->max_len_arg = new->qt_sym;
-	check_colors_file(new);
-	if (args->begin == NULL)
-	{
-		args->begin = new;
-		new->prev = NULL;
-	}
-	else
-	{
-		new->prev = args->end;
-		args->end->next = new;
-	}
-	new->next = NULL;
-	args->end = new;
 }
 
 static void		convert_args(t_info_args *args,
