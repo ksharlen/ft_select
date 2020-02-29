@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:43:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/29 14:19:54 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 15:50:14 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void			init_new_elem(t_info_args *args, const char *argv)
 	args->end = new;
 }
 
-void	init_term(struct s_init *init)
+void			init_term(struct s_init *init)
 {
 	int	st_stdwork;
 
@@ -53,7 +53,7 @@ void	init_term(struct s_init *init)
 	sl_tgetent(init->vterm);
 }
 
-void	init_termcap(t_info_args *args)
+void			init_termcap(t_info_args *args)
 {
 	char	*clear;
 
@@ -65,7 +65,7 @@ void	init_termcap(t_info_args *args)
 	sl_tputs(clear, 1, wputchar);
 }
 
-void	args_init(t_info_args *args)
+void			args_init(t_info_args *args)
 {
 	args->begin = NULL;
 	args->end = NULL;

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/29 14:09:14 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 15:50:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void			process_keypress(t_info_args *args)
 {
 	int		key;
 
-	key = 0;
 	while (args->size)
 	{
 		refresh_screen(args);

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 20:32:15 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/29 15:45:15 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 15:49:39 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void		clean_list(t_info_args *args)
 {
-	free((char *)args->begin->name);
+	ft_strdel((char **)&args->begin->name);
 	free(args->begin);
 	args->begin = NULL;
 	args->end = NULL;
@@ -60,7 +60,7 @@ static void		delete_first_elem(t_info_args *args)
 	args->begin = args->begin->next;
 	args->begin->prev = NULL;
 	args->cur_pos = args->begin;
-	free((char *)del->name);//TODO: add ft_strdel
+	ft_strdel((char **)&del->name);
 	free(del);
 }
 
