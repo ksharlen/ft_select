@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:26:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 17:10:47 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 14:12:42 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	select_mode(t_info_args *args, int argc, char **argv)
 		if (argc == 1)
 		{
 			if (*argv)
-				fill_filename_dir(args, *argv);//TODO
+				fill_filename_dir(args, *argv);
 			else
 				syserror(NULL, "dirname is emtpy string");
 		}

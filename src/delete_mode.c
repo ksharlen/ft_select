@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 21:23:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 14:31:47 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 14:12:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-static void	init_struct_del_mode(struct s_del_mode **sdm)
+static void		init_struct_del_mode(struct s_del_mode **sdm)
 {
 	*sdm = (struct s_del_mode *)ft_memalloc(sizeof(struct s_del_mode));
 	ft_chk_null_ptr(*sdm, E_MALLOC);
@@ -20,7 +20,7 @@ static void	init_struct_del_mode(struct s_del_mode **sdm)
 	(*sdm)->status = 0;
 }
 
-void	delete_mode(const char *dirname, t_info_args *args)
+void			delete_mode(const char *dirname, t_info_args *args)
 {
 	init_struct_del_mode(&args->sdm);
 	args->sdm->dirname = dirname;
@@ -34,7 +34,7 @@ void	delete_mode(const char *dirname, t_info_args *args)
 	}
 }
 
-void	delete_file(struct s_arg *current, t_info_args *args)
+void			delete_file(struct s_arg *current, t_info_args *args)
 {
 	char	buf[args->max_len_arg + ft_strlen(args->sdm->dirname) + 2];
 
@@ -50,7 +50,7 @@ void	delete_file(struct s_arg *current, t_info_args *args)
 	}
 }
 
-void	delete_files(t_info_args *args)
+void			delete_files(t_info_args *args)
 {
 	struct s_arg	*current;
 

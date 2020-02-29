@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 15:28:34 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 22:03:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 14:08:56 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,18 +75,18 @@ struct				s_buf_search
 
 typedef	struct		s_info_args
 {
-	struct s_last_deleted_elem	lde;//
-	struct s_win				wn;//
-	struct s_arg				*begin;//
-	struct s_arg				*end;//
-	struct s_arg				*cur_pos;//
+	struct s_last_deleted_elem	lde;
+	struct s_win				wn;
+	struct s_arg				*begin;
+	struct s_arg				*end;
+	struct s_arg				*cur_pos;
 	struct s_del_mode			*sdm;
-	size_t						size;//
-	uint32_t					status;//
-	uint32_t					max_len_arg;//
-	int32_t						num_cur_pos;//
-	char						*italics;//
-	char						*return_cursor;//
+	size_t						size;
+	uint32_t					status;
+	uint32_t					max_len_arg;
+	int32_t						num_cur_pos;
+	char						*italics;
+	char						*return_cursor;
 	struct s_buf_search			s_buf;
 }					t_info_args;
 

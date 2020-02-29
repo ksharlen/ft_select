@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 20:02:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 22:38:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 14:10:16 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-static void	draw_status_line(size_t row, size_t pos,
+static void		draw_status_line(size_t row, size_t pos,
 	size_t ncols, const char *color)
 {
 	set_pos_cursor(pos, row);
@@ -24,7 +24,6 @@ static void	draw_status_line(size_t row, size_t pos,
 static void		draw_search_mode(t_info_args *args, size_t *shift)
 {
 	size_t	len_input;
-	// char	buf[S_SEARCH] = {0};
 
 	set_pos_cursor(*(shift), args->wn.rows);
 	*shift += ft_write(STDWORK, STR_SEARCH_MODE, SIZE_SEARCH_MODE);
@@ -56,7 +55,7 @@ static void		draw_delete_mode(t_info_args *args, size_t *shift)
 	*shift += ft_write(STDWORK, args->lde.name, args->lde.size_name) + 1;
 }
 
-void	print_info_line(t_info_args *args)
+void			print_info_line(t_info_args *args)
 {
 	size_t	shift;
 
@@ -70,5 +69,4 @@ void	print_info_line(t_info_args *args)
 	else
 		draw_delete_mode(args, &shift);
 	draw_status_line(args->wn.rows, shift, 0, FT_COLOR_DFLT);
-	//TODO: here will search_mode
 }

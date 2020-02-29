@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:48:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 21:57:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 14:09:14 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void			process_keypress(t_info_args *args)
 		else if (key == KEY_ENTER)
 			break ;
 		else if (key == KEY_CTRL_F)
-			search_mode(args);//TODO: search_mode
+			search_mode(args);
 		else if (key == KEY_ESC)
 		{
 			canon(&g_cpy);

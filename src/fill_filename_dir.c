@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 19:58:10 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 14:27:45 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 14:11:31 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-static DIR	*sl_opendir(const char *dirname)
+static DIR		*sl_opendir(const char *dirname)
 {
 	DIR	*fd;
 
@@ -22,7 +22,7 @@ static DIR	*sl_opendir(const char *dirname)
 	return (fd);
 }
 
-static void	get_files(t_info_args *args, DIR *fd)
+static void		get_files(t_info_args *args, DIR *fd)
 {
 	struct dirent	*dent;
 
@@ -37,7 +37,7 @@ static void	get_files(t_info_args *args, DIR *fd)
 	args->cur_pos = args->begin;
 }
 
-void	fill_filename_dir(t_info_args *args, const char *dirname)
+void			fill_filename_dir(t_info_args *args, const char *dirname)
 {
 	DIR	*fd;
 

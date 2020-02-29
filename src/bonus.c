@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:46:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/25 22:04:17 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 14:10:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,22 @@ void	search_mode(t_info_args *args)
 	}
 	else
 		args->status |= SEARCH_MODE;
+}
+
+size_t	get_pos_curr(t_info_args *args)
+{
+	struct s_arg	*count;
+	size_t			pos;
+
+	pos = 0;
+	count = args->begin;
+	if (args->begin)
+	{
+		while (count != args->cur_pos)
+		{
+			++pos;
+			count = count->next;
+		}
+	}
+	return (pos);
 }

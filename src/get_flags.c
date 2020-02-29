@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 19:03:46 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/24 20:46:03 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 14:11:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	get_flag(t_info_args *args, char flag)
 		args->status |= DEL_MODE;
 }
 
-void	get_flags(t_info_args *args, int *argc, char ***argv)
+void		get_flags(t_info_args *args, int *argc, char ***argv)
 {
 	char	**p_argv;
 
