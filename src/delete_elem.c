@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 20:32:15 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/29 14:33:31 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 15:45:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static void		delete_last_elem(t_info_args *args)
 	struct s_arg	*prev_last;
 
 	prev_last = args->end->prev;
+	ft_strdel((char **)&args->end->name);
+	args->end->qt_sym = 0;
 	free(args->end);
 	prev_last->next = NULL;
 	args->end = prev_last;
@@ -44,6 +46,9 @@ static void		delete_elem_in_list(t_info_args *args)
 	args->cur_pos->next->prev = args->cur_pos->prev : NULL;
 	args->cur_pos = args->cur_pos->prev;
 	--args->num_cur_pos;
+	ft_strdel((char **)&del->name);
+	del->name = NULL;
+	del->qt_sym = 0;
 	free(del);
 }
 
@@ -55,7 +60,7 @@ static void		delete_first_elem(t_info_args *args)
 	args->begin = args->begin->next;
 	args->begin->prev = NULL;
 	args->cur_pos = args->begin;
-	free((char *)del->name);
+	free((char *)del->name);//TODO: add ft_strdel
 	free(del);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:12:23 by ksharlen          #+#    #+#             */
-/*   Updated: 2020/02/29 14:24:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2020/02/29 15:41:59 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,10 @@ void		delete_list(t_info_args *args)
 			{
 				del = args->begin;
 				args->begin = args->begin->next;
-				// ft_strdel((char **)&del->name);
 				free((char *)del->name);
 				del->name = NULL;
 				free(del);
 			}
-				// ft_strdel((char **)&args->lde.name);
 			args->begin = NULL;
 			args->end = NULL;
 			args->size = 0;
